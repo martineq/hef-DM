@@ -35,7 +35,7 @@
   <h4>hef DM</h4>
   <h5>hef DM</h5>
   <h6>hef DM</h6>
-  <hr/>	<!-- <hr/> horizontal rule: representa un cambio de tema entre párrafos, en general se ve como una línea horizontal  -->
+  <hr />	<!-- <hr /> horizontal rule: representa un cambio de tema entre párrafos, en general se ve como una línea horizontal  -->
   
   <!-- Paragraphs -->
   <div>		<!-- <div> sirve para crear secciones o agrupar contenidos. -->	<!-- <p> (párrafo) es el apropiado para distribuir el texto en párrafos. -->
@@ -48,9 +48,9 @@
   <a href="#bookmark">	<!-- Anchor <a> crea un enlace a otras páginas de internet, archivos o ubicaciones dentro de la misma página, email, o URL. -->
     <img src="avatar.png" alt="avatar" width="420">  <!-- <img> representa una imagen en el documento. -->
   </a>
-  <br><br>		<!-- line break <br> produce un salto de línea en el texto  -->
+  <br /><br />		<!-- line break <br /> produce un salto de línea en el texto  -->
   <a href="https://github.com/martineq">Github de Mart</a>
-  <hr/>
+  <hr />
 
   <!-- List -->
   <ol type="1" start="3">	<!-- ol permite definir listas o viñetas ordenadas (“Ordered List”), bien con numeración o alfabéticamente. -->
@@ -64,7 +64,7 @@
     <li>Punto IV</li>
     <li>Punto V</li>
   </ol>
-  <br><hr/><br>
+  <br /><hr /><br />
 
   <!-- Table -->
   <table>	<!-- El Elemento de Tabla HTML (<table>) representa datos en dos o mas dimensiones -->
@@ -89,7 +89,7 @@
       </tr>
     </tbody>
   </table>
-  <br>
+  <br />
   
   <table>
     <thead>
@@ -106,7 +106,7 @@
       </tr>
     </tbody>
   </table>
-  <br>
+  <br />
   <table>
     <tr>
       <th>Nombre:</th>
@@ -120,43 +120,43 @@
       <td>666-0303</td>
     </tr>
   </table>
-  <br>
-  <hr/>
-  <br>
+  <br />
+  <hr />
+  <br />
 
   <!-- Form -->
   <form action="server.php"> <!-- representa una sección de un doc que contiene controles interactivos que permiten a un usuario enviar info a un servidor web -->
     <fieldset>
       <legend>Información:</legend>
-      Nombre:<br>
-      <input type="text" name="Nombre" value="" placeholder="Introducir Nombre"><br>
-      Apellido:<br>
-      <input type="text" name="Apellido" value=""><br>
+      Nombre:<br />
+      <input type="text" name="Nombre" value="" placeholder="Introducir Nombre"><br />
+      Apellido:<br />
+      <input type="text" name="Apellido" value=""><br />
       <input type="radio" name="option"> Opción 1
-      <input type="radio" name="option"> Opción 2<br>
+      <input type="radio" name="option"> Opción 2<br />
       <input type="checkbox" name="checkboxes" checked> Checkbox 1
       <input type="checkbox" name="checkboxes"> Checkbox 2
-      <input type="checkbox" name="checkboxes"> Checkbox 3<br>
+      <input type="checkbox" name="checkboxes"> Checkbox 3<br />
       <label for="expSelect">Select:</label>
       <select name="exp" id="expSelect" multiple>
         <option value="exp1" selected>exp1</option>
         <option value="exp2">exp2</option>
         <option value="exp3">exp3</option>
       </select>
-      <br><br>
+      <br /><br />
       <input type="numero" value="Número">
     </fieldset>
   </form>
-  <hr/>
+  <hr />
 
   <!-- Button -->
   <button>Enviar</button>
-  <hr/>
-  <br>
+  <hr />
+  <br />
     
   <!-- Paragraph con Bookmark-->
   <p id="bookmark">Un párrafo corto.</p>
-  <br>
+  <br />
   
   <!-- <pre> define un texto pre-formateado.-->
   <pre>   
@@ -181,13 +181,16 @@
 
   <!-- <address> para indicar direcciones.-->
   <address>
-  Visite la sede Paseo Colón en:<br>
-  Paseo Colón 850, CABA<br>
+  Visite la sede Paseo Colón en:<br />
+  Paseo Colón 850, CABA<br />
   Argentina
   </address>
 
   <!-- <bdo> cambia la dirección de lectura del texto.-->
   <p>La palabra zorra al revés es <bdo dir="rtl">zorra</bdo></p>
+
+  <!-- Uso de símbolos en UTF-8.-->
+  <p>Matecito: &#129481;</p>
 
 </body>
 </html>
