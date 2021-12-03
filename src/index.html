@@ -8,11 +8,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">	<!-- name="viewport": Define qué área de pantalla está disponible al renderizar un documento --> 
   <meta http-equiv="X-UA-Compatible" content="ie=edge">		<!-- Especifica los métodos HTTP soportados por el servidor web --> 
   <meta name="description" content="hef DM">		<!-- name: Nombre al que se asocia la metainformación --> 
-  <meta name="keywords" content="HTML">
+  <meta name="keywords" content="HTML">				<!-- name="keywords": palabras clave para ser usadas por los buscadores --> 
   <meta name="author" content="Mart">
   <link rel="stylesheet" href="style.css">			<!-- rel: Describe la relación que mantiene el documento de destino con el documento presente  --> 
   
-  <!-- Creación de una clase con un estilo para ser aplicado, alternativa a style.css --> 
+  <!-- Creación de una clase con un estilo para ser aplicado ("Internal CSS"), alternativa a style.css --> 
   <style>
     .background {
       background-color: black;
@@ -20,7 +20,9 @@
     }
   </style>
   
-  <title>hef DM</title> <!-- Defino el título de la página HTML -->
+  <title>hef DM</title>	<!-- Defino el título de la página HTML -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico">	<!-- Agrego el favicon de la página -->
+  
 </head>
 
 
@@ -88,11 +90,12 @@
     </tbody>
   </table>
   <br>
+  
   <table>
     <thead>
       <tr>
         <th>Nombre:</th>
-        <th colspan="2">Celular:</th>
+        <th colspan="2">Celular:</th>	<!-- Este encabezado ahora ocupa 2 columnas -->
       </tr>
     </thead>
     <tbody>
@@ -110,7 +113,7 @@
       <td>Ío Wang</td>
     </tr>
     <tr>
-      <th rowspan="2">Celular:</th>
+      <th rowspan="2">Celular:</th>	<!-- Este encabezado ahora ocupa 2 filas -->
       <td>555-9191</td>
     </tr>
     <tr>
@@ -150,14 +153,11 @@
   <button>Enviar</button>
   <hr/>
   <br>
-  <br>
-  <br>
-  <br>
-  <br>
     
   <!-- Paragraph con Bookmark-->
   <p id="bookmark">Un párrafo corto.</p>
   <br>
+  
   <!-- <pre> define un texto pre-formateado.-->
   <pre>   
   Línea 1 de un párrafo.
@@ -170,24 +170,24 @@
   <!-- <p> para pequeñas citas.-->
   <p>En este párrafo hay: <q>Una pequeña cita.</q></p> 
 
-<!-- <p> para citas grandes.-->
+  <!-- <p> para citas grandes.-->
   <p>Una cita del github de mart:</p>
 	<blockquote cite="https://github.com/martineq">
 	Lorem ipsum dolor sit, amet consectetur adipisicing elit. Adipisci necessitatibus consectetur debitis. Molestias dolore architecto asperiores facere, est sed adipisci quia dignissimos, aliquid eligendi sit eveniet. Sed perferendis excepturi minus!
 	</blockquote> 
 
-<!-- <abbr> para explicar una abreviatura.-->
- <p>La <abbr title="Facultad de Ingeniería de la Universidad de Buenos Aires">FIUBA</abbr> posee tres sedes.</p> 
+  <!-- <abbr> para explicar una abreviatura.-->
+  <p>La <abbr title="Facultad de Ingeniería de la Universidad de Buenos Aires">FIUBA</abbr> posee tres sedes.</p> 
 
-<!-- <address> para indicar direcciones.-->
-	<address>
-	Visite la sede Paseo Colón en:<br>
-	Paseo Colón 850, CABA<br>
-	Argentina
-	</address>
+  <!-- <address> para indicar direcciones.-->
+  <address>
+  Visite la sede Paseo Colón en:<br>
+  Paseo Colón 850, CABA<br>
+  Argentina
+  </address>
 
-<!-- <bdo> cambia la dirección de lectura del texto.-->
- <p>La palabra zorra al revés es <bdo dir="rtl">zorra</bdo></p>
+  <!-- <bdo> cambia la dirección de lectura del texto.-->
+  <p>La palabra zorra al revés es <bdo dir="rtl">zorra</bdo></p>
 
 </body>
 </html>
