@@ -125,32 +125,55 @@
   <br />
 
   <!-- Form -->
-  <form action="server.php"> <!-- representa una sección de un doc que contiene controles interactivos que permiten a un usuario enviar info a un servidor web -->
+  <form action="server.php" autocomplete="on" id="form1"> <!-- representa una sección de un doc que contiene controles interactivos que permiten a un usuario enviar info a un servidor web -->
     <fieldset>
       <legend>Información:</legend>
-      Nombre:<br />
-      <input type="text" name="Nombre" value="" placeholder="Introducir Nombre"><br />
-      Apellido:<br />
-      <input type="text" name="Apellido" value=""><br />
-      <input type="radio" name="option"> Opción 1
-      <input type="radio" name="option"> Opción 2<br />
-      <input type="checkbox" name="checkboxes" checked> Checkbox 1
-      <input type="checkbox" name="checkboxes"> Checkbox 2
-      <input type="checkbox" name="checkboxes"> Checkbox 3<br />
-      <label for="expSelect">Select:</label>
-      <select name="exp" id="expSelect" multiple>
-        <option value="exp1" selected>exp1</option>
-        <option value="exp2">exp2</option>
-        <option value="exp3">exp3</option>
+	  
+      <label for="nombre">Nombre:</label><br />
+      <input type="text" id="nombre" name="nombre" value="" placeholder="Introducir Nombre"><br />
+	  
+      <label for="apellido">Apellido:</label><br />
+      <input type="text" id="apellido" name="Apellido" value="" list="apellidoscomunes"><br />
+	  <datalist id="apellidoscomunes">
+		<option value="Lopez">
+		<option value="Perez">
+		<option value="Gonzalez">
+		<option value="Gomez">
+		<option value="Rodriguez">
+	  </datalist>	  
+      <input type="radio" id="opcion1" name="eleccion" value="opcion1"> 
+	  <label for="opcion1">Opción 1</label><br />
+      <input type="radio" id="opcion2" name="eleccion" value="opcion2">
+	  <label for="opcion2">Opción 2</label><br />
+	  <input type="checkbox" id="checkbox1" name="checkbox1" value="checkbox1" checked>
+	  <label for="checkbox1">Checkbox 1</label>
+	  <input type="checkbox" id="checkbox2" name="checkbox2" value="checkbox2">
+	  <label for="checkbox2">Checkbox 2</label>
+	  <input type="checkbox" id="checkbox3" name="checkbox3" value="checkbox3">
+	  <label for="checkbox3">Checkbox 3</label><br />
+      <label for="expSelect">Elija:</label>
+      <select id="expSelect" name="exp" size="5" multiple>
+        <option value="exp1" selected>Exp 1</option>
+        <option value="exp2">Exp 2</option>
+        <option value="exp3">Exp 3</option>
       </select>
-      <br /><br />
-      <input type="numero" value="Número">
+      <br />
+	  <label for="decenas">Decena favorita:</label>
+      <input type="number" id="decenas" name="decenas" min="0" max="100" step="10" value="10"><br />
+	  <label for="favcolor">Elija su color favorito:</label>
+	  <input type="color" id="favcolor" name="favcolor"><br />
+	  <label for="nacimiento">Fecha de nacimiento:</label>
+	  <input type="date" id="nacimiento" name="nacimiento"><br />
+	  <textarea name="comentarios" rows="10" cols="30">Mis comentarios son: </textarea> <br />
+	  <input type="hidden" id="usrId" name="usrId" value="19290">
+	  <!--  <input type="submit" value="Enviar">  -->  <!-- Botón de enviar, envia la informaicón donde indique el form action="..." --> 
+	  <input type="button" value="Enviar">
     </fieldset>
   </form>
   <hr />
 
-  <!-- Button -->
-  <button>Enviar</button>
+  <!-- Botón -->
+  <button type="button">Botón Suelto</button>
   <hr />
   <br />
     
