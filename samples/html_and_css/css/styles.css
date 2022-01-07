@@ -1,0 +1,199 @@
+/* Selectores de tipo */
+body {  /* Asigno parámetros para todo lo que se encuentra dentro de body */
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.6em;
+  margin: 0;
+}
+
+/* Selectores de clase */
+.container {  /* Asigno parámetros para la clase container */
+  width: 95%;
+  margin: auto;
+  overflow: hidden;
+}
+
+.clearFix { /* Asigno parámetros para la clase clearfix */
+  clear: both;
+}
+
+/* Selector de ID */
+#mainHeader {  /* Asigno parámetros para el ID mainHeader */
+  padding: 60px;
+  text-align: center;
+  background: #1a6ebc;
+  color: white;
+}
+#mainNav {    /* Asigno parámetros para el ID mainNav */
+  background-color: #333;
+  color: black;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  display: flex;
+}
+#mainNav ul { /* Asigno parámetros para los elementos ul, dentro del ID mainNav */
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+#mainNav li {  /* Asigno parámetros para los elementos li, dentro del ID mainNav */
+  display: inline;
+  padding: 5px 10px;
+}
+#mainNav a { /* Asigno parámetros para los elementos a, dentro del ID mainNav */
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  text-align: center;
+}
+#mainNav li:hover { /* Asigno parámetros para la pseudo-clase :hover del elemento li, dentro del ID mainNav */
+  background-color: #ddd;
+}
+#mainNav a:hover { /* Asigno parámetros para la pseudo-clase :hover del elemento a, dentro del ID mainNav */
+  color: black;
+}
+
+#jumbo {  /* Asigno parámetros para el ID jumbo */
+  background-image: url('../images/bg.png');
+  background-position: center center;
+  min-height: 50px;
+  text-align: center;
+}
+#jumbo h1 { /* Asigno parámetros para los elementos h1, dentro del ID jumbo */
+  color: black;
+  font-size: 45px;
+  padding-top: 20px;
+  line-height: 1.6em;
+}
+#main { /* Asigno parámetros para el ID main */
+  float: right;
+  width: 70%;
+  padding: 20px;
+  box-sizing: border-box;
+  flex: 70%;
+  background-color: white;
+}
+#sidebar {  /* Asigno parámetros para el ID sidebar */
+  float: left;
+  width: 30%;
+  padding: 20px;
+  border-right: 1px solid #333;
+  box-sizing: border-box;
+  letter-spacing: .2em;
+  word-spacing: 1em;
+  flex: 30%;
+  background-color: #f1f1f1;
+}
+#mainFooter { /* Asigno parámetros para el ID mainFooter */
+  background: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  margin-top: 50px;
+}
+#pExample { /* Asigno parámetros para el ID pExample */
+  width: 400px;
+  height: 400px;
+  border: 1px solid #333;
+  border-radius: 20px 10px 0 5px;
+  position: relative;
+}
+#pExample span:first-child {  /* Asigno parámetros para la pseudo-clase :first-child del elemento span, dentro del ID pExample */
+  position: absolute;
+  bottom: 20px;
+  right: 100px;
+  font-style: italic;
+  font-weight: 800;
+  text-decoration: underline;
+  text-transform: uppercase;
+}
+#pExample span:last-child {  /* Asigno parámetros para la pseudo-clase :last-child del elemento span, dentro del ID pExample */
+  position: absolute;
+  top: 100px;
+  left:30px;
+}
+#fixed {  /* Asigno parámetros para el ID fixed */
+  position: fixed;
+  bottom: 0;
+  right: 50px;
+  background:#ff652f;
+  padding: 5px;
+}
+
+/* media queries */
+ @media (max-width:600px){  /*Asigno parámetros a través de la regla-at CSS @media, en los ID main y sidebar */
+  #main, #sidebar {
+    width: 100%;
+    float: none;
+    border: none;
+  }
+
+  #mainNav li {           /*Asigno parámetros a través de la regla-at CSS @media para el elemento li, en el ID mainNav */
+    display: block;
+  }
+
+  .row, #mainNav {   
+    flex-direction: column;
+  }
+
+}
+
+/* Contenedor para el Tooltip */
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+/* texto del Tooltip */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  top: -5px;
+  left: 105%; 
+
+  /* Posición del tooltip */
+  position: absolute;
+  z-index: 1;
+}
+
+/* Agrego un efecto de globo de diálogo al tooltip */
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 100%;
+  margin-top: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent black  transparent transparent;
+}
+
+/* Muestra el texto del tooltip cuando se pasa por arriba con el mouse sobre el contenedor del tooltip */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+/* Hace que el padding agregado y el border agregado ya cuenten dentro del width y height total del elemento */
+* {
+  box-sizing: border-box;
+}
+
+/* Container para la columna*/
+.row {  
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Simula una imagen */
+.fakeimg {
+  background-color: #aaa;
+  width: 100%;
+  padding: 20px;
+}
