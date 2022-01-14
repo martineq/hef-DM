@@ -55,10 +55,12 @@ body {  /* Asigno parámetros para todo lo que se encuentra dentro de body */
 }
 
 #jumbo {  /* Asigno parámetros para el ID jumbo */
-  background-image: url('../images/bg.png');
+  --background-image-default-url: url('../images/bg.png');
+  --text-align-default: center;
+  background-image: var(--background-image-default-url);
   background-position: center center;
   min-height: 50px;
-  text-align: center;
+  text-align: var(--text-align-default);
 }
 #jumbo h1 { /* Asigno parámetros para los elementos h1, dentro del ID jumbo */
   color: black;
@@ -128,11 +130,9 @@ body {  /* Asigno parámetros para todo lo que se encuentra dentro de body */
     float: none;
     border: none;
   }
-
   #mainNav li {           /*Asigno parámetros a través de la regla-at CSS @media para el elemento li, en el ID mainNav */
     display: block;
   }
-
   .row, #mainNav {   
     flex-direction: column;
   }
