@@ -9,145 +9,251 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">		<!-- Especifica los métodos HTTP soportados por el servidor web --> 
   <meta name="description" content="hef DM">		<!-- name: Nombre al que se asocia la metainformación --> 
   <meta name="keywords" content="HTML">				<!-- name="keywords": palabras clave para ser usadas por los buscadores --> 
-  <meta name="author" content="Mart">
+  <meta name="author" content="Mart">				<!-- name="author": define al autor de la página -->
+  <link rel="stylesheet" href="./css/styles.css"> 	<!-- rel="stylesheet": Define un recurso externo para ser usado como hoja de estilos --> 
   <title>hef DM: Document Management</title>	<!-- Defino el título de la página HTML, importante para el SEO -->
   <link rel="icon" type="image/x-icon" href="favicon.ico">	<!-- Agrego el favicon de la página -->
 </head>
 
 <!-- Sección body -->
 <body>
-  
-  <h1>Documentos</h1>
-  <hr />	<!-- <hr /> horizontal rule: representa un cambio de tema entre párrafos, en general se ve como una línea horizontal  -->
+    <div class="container"> <!-- Clase para contener toda la página -->  <!-- <div> define una división o sección en el documento HTML, es usado como contenedor para otros elementos y también es estilizado con CSS y manipulado con JS --> 
+	  
+	  <!-- Sección cabecera -->
+	  <div class="header">
+		<h1>Documentos</h1>
+		
+		<ul class="topnav">
+		  <li><a class="active" href="#home">Home</a></li>
+		  <li><a href="#menu1">Menú 1</a></li>
+		  <li><a href="#menu2">Menú 2</a></li>
+		  <li><a href="#menu3">Menú 3</a></li>  
+		  <li><a href="#menu4">Menú 4</a></li>
+		  <li class="right"><a href="#about">Acerca de</a></li>
+		</ul>
+	  </div>
+	  
+	  <!-- Sección principal -->
+	  <div class="main">
+	    <table>	<!-- El Elemento de Tabla HTML (<table>) representa datos en dos o mas dimensiones -->
+			<caption>Registro de Documentos</caption>  <!-- <caption> es el encargado de darle un título descriptivo a las tablas -->
+			<thead>									<!-- <thead> es usado para agrupar contenido de títulos de una tabla -->
+			  <tr>									<!-- <tr> agrupa los datos de una fila de una tabla -->
+				<th>Agente</th>						<!-- <th> indica que es un encabezado de tabla -->
+				<th>Fecha</th>
+				<th>Empresa</th>
+				<th>Numero Documentacion</th>
+				<th>Nro Comprobante A</th>
+				<th>NCA Duplicado</th>
+				<th>Nro Comprobante B</th>
+				<th>NCB Duplicado</th>
+				<th>Monto Comprobante B</th>
+				<th>Fecha Comprobante B</th>
+			  </tr>
+			</thead>
+			<tbody>									<!-- <tbody> es usado para agrupar contenido del cuerpo de una tabla (los datos) -->
+			  <tr>
+				<td>Wang</td>						<!-- <td> indica que es un dato de tabla -->
+				<td>02/Nov/2020</td>
+				<td>Empresa ABC</td>
+				<td>4651151/2020</td>
+				<td>48916</td>
+				<td></td>
+				<td>15656</td>
+				<td></td>
+				<td>651.36</td>
+				<td>01/Nov/2020</td>
+			  </tr>
+			  <tr>
+				<td>Wang</td>
+				<td>02/Nov/2020</td>
+				<td>Empresa ABC</td>
+				<td>4651151/2020</td>
+				<td>48916</td>
+				<td></td>
+				<td>15656</td>
+				<td></td>
+				<td>651.36</td>
+				<td>01/Nov/2020</td>
+			  </tr>
+			  <tr>
+				<td>Wang</td>
+				<td>02/Nov/2020</td>
+				<td>Empresa ABC</td>
+				<td>4651151/2020</td>
+				<td>48916</td>
+				<td></td>
+				<td>15656</td>
+				<td></td>
+				<td>651.36</td>
+				<td>01/Nov/2020</td>
+			  </tr>
+			  <tr>
+				<td>Wang</td>
+				<td>02/Nov/2020</td>
+				<td>Empresa ABC</td>
+				<td>4651151/2020</td>
+				<td>48916</td>
+				<td></td>
+				<td>15656</td>
+				<td></td>
+				<td>651.36</td>
+				<td>01/Nov/2020</td>
+			  </tr>
+			  <tr>
+				<td>Wang</td>
+				<td>02/Nov/2020</td>
+				<td>Empresa ABC</td>
+				<td>4651151/2020</td>
+				<td>48916</td>
+				<td></td>
+				<td>15656</td>
+				<td></td>
+				<td>651.36</td>
+				<td>01/Nov/2020</td>
+			  </tr>
+			  <tr>
+				<td>Wang</td>
+				<td>02/Nov/2020</td>
+				<td>Empresa ABC</td>
+				<td>4651151/2020</td>
+				<td>48916</td>
+				<td></td>
+				<td>15656</td>
+				<td></td>
+				<td>651.36</td>
+				<td>01/Nov/2020</td>
+			  </tr>
+			  <tr>
+				<td>Wang</td>
+				<td>02/Nov/2020</td>
+				<td>Empresa ABC</td>
+				<td>4651151/2020</td>
+				<td>48916</td>
+				<td></td>
+				<td>15656</td>
+				<td></td>
+				<td>651.36</td>
+				<td>01/Nov/2020</td>
+			  </tr>
+			  <tr>
+				<td>Wang</td>
+				<td>02/Nov/2020</td>
+				<td>Empresa ABC</td>
+				<td>4651151/2020</td>
+				<td>48916</td>
+				<td></td>
+				<td>15656</td>
+				<td></td>
+				<td>651.36</td>
+				<td>01/Nov/2020</td>
+			  </tr>
+			  <tr>
+				<td>Wang</td>
+				<td>02/Nov/2020</td>
+				<td>Empresa ABC</td>
+				<td>4651151/2020</td>
+				<td>48916</td>
+				<td></td>
+				<td>15656</td>
+				<td></td>
+				<td>651.36</td>
+				<td>01/Nov/2020</td>
+			  </tr>
+			  			  <tr>
+				<td>Wang</td>
+				<td>02/Nov/2020</td>
+				<td>Empresa ABC</td>
+				<td>4651151/2020</td>
+				<td>48916</td>
+				<td></td>
+				<td>15656</td>
+				<td></td>
+				<td>651.36</td>
+				<td>01/Nov/2020</td>
+			  </tr>
+			  			  <tr>
+				<td>Wang</td>
+				<td>02/Nov/2020</td>
+				<td>Empresa ABC</td>
+				<td>4651151/2020</td>
+				<td>48916</td>
+				<td></td>
+				<td>15656</td>
+				<td></td>
+				<td>651.36</td>
+				<td>01/Nov/2020</td>
+			  </tr>
+			  			  <tr>
+				<td>Wang</td>
+				<td>02/Nov/2020</td>
+				<td>Empresa ABC</td>
+				<td>4651151/2020</td>
+				<td>48916</td>
+				<td></td>
+				<td>15656</td>
+				<td></td>
+				<td>651.36</td>
+				<td>01/Nov/2020</td>
+			  </tr>
+			  			  <tr>
+				<td>Wang</td>
+				<td>02/Nov/2020</td>
+				<td>Empresa ABC</td>
+				<td>4651151/2020</td>
+				<td>48916</td>
+				<td></td>
+				<td>15656</td>
+				<td></td>
+				<td>651.36</td>
+				<td>01/Nov/2020</td>
+			  </tr>
+			  			  <tr>
+				<td>Wang</td>
+				<td>02/Nov/2020</td>
+				<td>Empresa ABC</td>
+				<td>4651151/2020</td>
+				<td>48916</td>
+				<td></td>
+				<td>15656</td>
+				<td></td>
+				<td>651.36</td>
+				<td>01/Nov/2020</td>
+			  </tr>
+			  			  <tr>
+				<td>Wang</td>
+				<td>02/Nov/2020</td>
+				<td>Empresa ABC</td>
+				<td>4651151/2020</td>
+				<td>48916</td>
+				<td></td>
+				<td>15656</td>
+				<td></td>
+				<td>651.36</td>
+				<td>01/Nov/2020</td>
+			  </tr>
+			  			  <tr>
+				<td>Wang</td>
+				<td>02/Nov/2020</td>
+				<td>Empresa ABC</td>
+				<td>4651151/2020</td>
+				<td>48916</td>
+				<td></td>
+				<td>15656</td>
+				<td></td>
+				<td>651.36</td>
+				<td>01/Nov/2020</td>
+			  </tr>
+			</tbody>
+	    </table>
+	  </div>  
 
-  <table>	<!-- El Elemento de Tabla HTML (<table>) representa datos en dos o mas dimensiones -->
-    <caption>Registro de Documentos</caption>  <!-- caption es el encargado de darle un título descriptivo a las tablas -->
-    <thead>
-      <tr>
-        <th>Agente</th>
-        <th>Fecha</th>
-        <th>Empresa</th>
-        <th>Numero Documentacion</th>
-        <th>Nro Comprobante A</th>
-        <th>NCA Duplicado</th>
-        <th>Nro Comprobante B</th>
-        <th>NCB Dupli</th>
-        <th>Monto Comprobante B</th>
-        <th>Fecha Comprobante B</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Wang</td>
-        <td>02/Nov/2020</td>
-        <td>Empresa ABC</td>
-        <td>4651151/2020</td>
-        <td>48916</td>
-        <td></td>
-        <td>15656</td>
-        <td></td>
-        <td>651.36</td>
-        <td>01/Nov/2020</td>
-      </tr>
-      <tr>
-        <td>Wang</td>
-        <td>02/Nov/2020</td>
-        <td>Empresa ABC</td>
-        <td>4651151/2020</td>
-        <td>48916</td>
-        <td></td>
-        <td>15656</td>
-        <td></td>
-        <td>651.36</td>
-        <td>01/Nov/2020</td>
-      </tr>
-      <tr>
-        <td>Wang</td>
-        <td>02/Nov/2020</td>
-        <td>Empresa ABC</td>
-        <td>4651151/2020</td>
-        <td>48916</td>
-        <td></td>
-        <td>15656</td>
-        <td></td>
-        <td>651.36</td>
-        <td>01/Nov/2020</td>
-      </tr>
-      <tr>
-        <td>Wang</td>
-        <td>02/Nov/2020</td>
-        <td>Empresa ABC</td>
-        <td>4651151/2020</td>
-        <td>48916</td>
-        <td></td>
-        <td>15656</td>
-        <td></td>
-        <td>651.36</td>
-        <td>01/Nov/2020</td>
-      </tr>
-      <tr>
-        <td>Wang</td>
-        <td>02/Nov/2020</td>
-        <td>Empresa ABC</td>
-        <td>4651151/2020</td>
-        <td>48916</td>
-        <td></td>
-        <td>15656</td>
-        <td></td>
-        <td>651.36</td>
-        <td>01/Nov/2020</td>
-      </tr>
-      <tr>
-        <td>Wang</td>
-        <td>02/Nov/2020</td>
-        <td>Empresa ABC</td>
-        <td>4651151/2020</td>
-        <td>48916</td>
-        <td></td>
-        <td>15656</td>
-        <td></td>
-        <td>651.36</td>
-        <td>01/Nov/2020</td>
-      </tr>
-      <tr>
-        <td>Wang</td>
-        <td>02/Nov/2020</td>
-        <td>Empresa ABC</td>
-        <td>4651151/2020</td>
-        <td>48916</td>
-        <td></td>
-        <td>15656</td>
-        <td></td>
-        <td>651.36</td>
-        <td>01/Nov/2020</td>
-      </tr>
-      <tr>
-        <td>Wang</td>
-        <td>02/Nov/2020</td>
-        <td>Empresa ABC</td>
-        <td>4651151/2020</td>
-        <td>48916</td>
-        <td></td>
-        <td>15656</td>
-        <td></td>
-        <td>651.36</td>
-        <td>01/Nov/2020</td>
-      </tr>
-      <tr>
-        <td>Wang</td>
-        <td>02/Nov/2020</td>
-        <td>Empresa ABC</td>
-        <td>4651151/2020</td>
-        <td>48916</td>
-        <td></td>
-        <td>15656</td>
-        <td></td>
-        <td>651.36</td>
-        <td>01/Nov/2020</td>
-      </tr>
-    </tbody>
-  </table>
-  <br/>
+	  <!-- Sección pie -->
+	  <div class="footer">
+	  <p>hef-DM</p>
+	  </div>
+
+	</div>
 
 </body>
 </html>
