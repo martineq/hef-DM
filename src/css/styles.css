@@ -1,20 +1,20 @@
 /* Estilo aplicado a todo el HTML */
 * {
-  box-sizing: border-box;	/* Hace que el padding agregado y el border agregado ya cuenten dentro del width y height total del elemento */
+  box-sizing: border-box;											/* Hace que el padding agregado y el border agregado ya cuenten dentro del width y height total del elemento */
 }
 
 /* Estilo aplicado al body */
 body {
   font-family: Arial, Helvetica, sans-serif;	/* font-family define una lista de fuentes o familias de fuentes, con un orden de prioridad.*/
-  font-size: 100%;								/* font-size define el tamaño del font.*/
-  margin: 0px;									/* margin define el tamaño del margen.*/
-  line-height: 1.5;								/* line-height establece la altura de una casilla remarcada por líneas.*/
+  font-size: 100%;														/* font-size define el tamaño del font.*/
+  margin: 0px;																/* margin define el tamaño del margen.*/
+  line-height: 1.5;														/* line-height establece la altura de una casilla remarcada por líneas.*/
 }
 
 /* Container tipo grid */
 .container {
-  display: grid;								/* display: grid define un layout tipo grid.*/
-  grid-template-areas: 							/* grid-template-areas especifica nombres para cada una de las áreas del grid */
+  display: grid;															/* display: grid define un layout tipo grid.*/
+  grid-template-areas: 												/* grid-template-areas especifica nombres para cada una de las áreas del grid */
     'header header header header header header' 
     'main main main main main main' 
     'footer footer footer footer footer footer';
@@ -22,9 +22,9 @@ body {
 
 /* Estilo para la cabecera */
 .header {
-  grid-area: header;							/* grid-area: referencia a una o varias de las celdas del grid con un nombre específico.*/
-  background-color: #f1f1f1;					/* background-color define el color de fondo de un elemento */
-  text-align: center;							/* text-align especifica el alineamiento horizontal de un texto en un elemento */
+  grid-area: header;													/* grid-area: referencia a una o varias de las celdas del grid con un nombre específico.*/
+  background-color: #f1f1f1;									/* background-color define el color de fondo de un elemento */
+  text-align: center;													/* text-align especifica el alineamiento horizontal de un texto en un elemento */
 }
 
 /* Estilo para la sección principal */
@@ -41,25 +41,25 @@ body {
 
 /* Estilo para la barra de navegación */
 ul.topnav {
-  list-style-type: none;			/* list-style-type: especifica la apariencia del listado. El valor "none" quita todo estilo. */
+  list-style-type: none;				/* list-style-type: especifica la apariencia del listado. El valor "none" quita todo estilo. */
   margin: 0;
   padding: 0;
-  overflow: hidden;					/* especifica si recortar contenido, dibujar barras de desplazamiento o mostrar el contenido excedente en un elemento. */
+  overflow: hidden;							/* especifica si recortar contenido, dibujar barras de desplazamiento o mostrar el contenido excedente en un elemento. */
   background-color: #1e2127;
 }
 
 /* Estilo para los items de la barra de navegación */
 ul.topnav li {
-	float: left;					/* float: ubica un elemento al lado izquierdo o derecho de su contenedor */
+	float: left;									/* float: ubica un elemento al lado izquierdo o derecho de su contenedor */
 }
 
 /* Estilo para los items y elementos anchor, dentro de la barra de navegación */
 ul.topnav li a {
-  display: block;					/* display: block declara un formato en forma de bloque*/
+  display: block;								/* display: block declara un formato en forma de bloque*/
   color: white;
   text-align: center;
   padding: 14px 16px;
-  text-decoration: none;			/* text-decoration: establece formato de texto subrayado/suprarrayado/tachado/parpadeo */
+  text-decoration: none;				/* text-decoration: establece formato de texto subrayado/suprarrayado/tachado/parpadeo */
 }
 
 /* Estilo para los items y elementos anchor, que no son "active" y sobre el cual paso el mouse */
@@ -79,37 +79,19 @@ ul.topnav li.right {
 
 /* Estilo para todas las partes de la tabla */
 table {
-  background: #ffffff;							/* "background: #ffffff" equivale a "background-color: #ffffff" */
+  background: #ffffff;								/* "background: #ffffff" equivale a "background-color: #ffffff" */
   border-collapse: collapse;					/* "border-collapse: collapse" hace que las celdas compartan bordes */
-  margin: auto;									/* "margin: auto" indica el margen en "automático" para los cuatro lados de la tabla */
-  width: 98%; 									/* width: especifica el ancho del area de contenido de un elemento  */
-  
-  color:#676c87;			/* color: Selecciona el valor de color de primer plano del contenido de elemento de texto y decoraciones de texto */
-  font-size:medium;			/* font-size: especifica la dimensión de la letra */
-  text-align:center;		/* text-align: especifica el alineamiento horizontal del texto */ 
-  vertical-align:middle;	/* vertical-align: especifica el alineado vertical de un elemento en línea o una celda de una tabla */
-   
-  /*border-radius:10px;*/ /*revisar que pasa si se pone*/
-  /*height: 320px;*/ /*se podría sacar, me parece que no afecta*/
-  /*max-width: 600px;*/  /*se podría sacar, no necesito un ancho máximo*/
-  /*padding:0px;  */  /*se podría sacar, no se necesita a priori*/
-  /*width: 100%;*/  /*se podría sacar, no se necesita a priori*/
-  /*box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);*/ /*se podría sacar, me parece que no afecta*/
-  /*animation: float 5s infinite;*/  /*se podría sacar, no se necesita a priori*/
-}
-
-/* Estilo para las filas de datos de la tabla, tanto para la cabecera como el resto de las filas de datos */  
-tr {
-
-  /*font-weight:medium;*/
-  /*border-top: 1px solid #C1C3D1;
-  border-bottom: 1px solid #C1C3D1;*/
-  /*text-shadow: 0 1px 1px rgba(256, 256, 256, 0.1);*/
+  margin: auto;												/* "margin: auto" indica el margen en "automático" para los cuatro lados de la tabla */
+  width: 98%; 												/* width: especifica el ancho del area de contenido de un elemento  */
+  color:#676c87;											/* color: Selecciona el valor de color de primer plano del contenido de elemento de texto y decoraciones de texto */
+  font-size:medium;										/* font-size: especifica la dimensión de la letra */
+  text-align:center;									/* text-align: especifica el alineamiento horizontal del texto */ 
+  vertical-align:middle;							/* vertical-align: especifica el alineado vertical de un elemento en línea o una celda de una tabla */
 }
 
 /* Estilo para las celdas del encabezado y las celdas de datos de la tabla */
 th, td {
-  padding:5px; 					/* padding: espacio de relleno requerido por todos los lados de un elemento */ 
+  padding:5px; 												/* padding: espacio de relleno requerido por todos los lados de un elemento */ 
 }
 
 /* Estilo para las celdas del encabezado de la tabla */
@@ -117,28 +99,8 @@ th {
   color:#d4dce3;					
   background:#1e2127;
   border: 2px solid #343a45;
-  
-  position: sticky;				/* position: sticky -> Elemento posicionado relativamente hasta que su bloque contenedor cruza un límite establecido */
-  top:0;						/* Top: distancia entre el borde superior del elemento y el borde superior del bloque contenedor */ /* Necesario para sticky*/
-  
-  /*text-align:center; */			/* no hace falta*/	
-  /*vertical-align:middle;*/			
-  /*text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);*/
-  /*border-bottom:4px solid #9ea7af;*/  /* border-bottom: Define color, estilo y ancho del borde inferior  */ 
-  /*border-right: 2px solid #343a45;*/	/* border-right: Define color, estilo y ancho del borde derecho  */ 
-  /*font-size:23px;*/ /*se podría sacar, afecta negativamente*/
-  /*font-weight: normal;*/
-}
-
-/* Estilo para las celdas de datos de la tabla */ 
-td {
-  /*background:#ffffff;*/
-  
-  /*text-align:center;*/		/* no hace falta*/	
-  /*vertical-align:middle;*/
-  /*font-weight:300;*/
-  /*font-size:18px;*/ /* no hace falta*/	
-  /*border: 1px solid #C1C3D1;*/  /* Agregar si se quiere poner líneas verticales */
+  position: sticky;						/* position: sticky -> Elemento posicionado relativamente hasta que su bloque contenedor cruza un límite establecido */
+  top:0;											/* Top: distancia entre el borde superior del elemento y el borde superior del bloque contenedor */ /* Necesario para sticky*/
 }
 
 /* Fila de datos de la tabla - Cambio de color en filas impares */ 
@@ -150,8 +112,6 @@ tr:nth-child(odd) td {
 tr:hover td {
   background:#4f5167;
   color:#ffffff;
-  
-  /*border-top: 1px solid #22262e;*/
 }
 
 /* Responsive: Para áreas pequeñas se modifica la disposición de la barra de navegación y el grid*/
@@ -159,13 +119,11 @@ tr:hover td {
   ul.topnav li.right, ul.topnav li {
 	  float: none;
   }
-
-  /*
-  .container  {
+  
+  /*.container  {
     grid-template-areas: 
       'header header header header header header' 
 	  'main main main main main main' 
       'footer footer footer footer footer footer';
-  }
-  */
+  } */
 }
