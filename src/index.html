@@ -1,5 +1,5 @@
-<!DOCTYPE html>		<!-- Declaro el documento como HTML -->
-<html lang="es-AR">	<!-- Declaro el idioma del contenido de mi página HTML -->
+<!DOCTYPE html>				<!-- Declaro el documento como HTML -->
+<html lang="es-AR">		<!-- Declaro el idioma del contenido de mi página HTML -->
 
 <!-- Sección head -->
 <head>
@@ -17,18 +17,23 @@
 
 <!-- Sección body -->
 <body>
-	<input type="checkbox" class="checkbox" id="check" />
 	
-	<div class="container"> <!-- Clase para contener toda la página -->  <!-- <div> define una división o sección en el documento HTML, es usado como contenedor para otros elementos y también es estilizado con CSS y manipulado con JS --> 
+	<!-- Clase para contener toda la página -->
+	<div class="container">	<!-- <div> define una división o sección en el documento HTML, es usado como contenedor para otros elementos y también es estilizado con CSS y manipulado con JS --> 
 
 	  <!-- Sección cabecera -->
 	  <div class="header">
 			<h1>Documentos</h1>
 			
-			<label class="label" for="check">
-				<div class="ball"></div>
-			</label>
-			<ul class="topnav">
+			<!-- Elementos que cumplen la visualización (togglebackground + toggle) y funcionalidad (checkbox) de un toggle  -->
+			<input type="checkbox" class="checkbox" id="checktoggle" />	<!-- type: El tipo de control a mostrar / id: identificador único en todo el documento -->
+			<div class="togglebackground">
+				<label class="toggle" for="checktoggle">	<!-- <label> define una etiqueta para un control de un formulario HTML --> 
+				</label>
+			</div>
+			
+			<!-- Barra de navegación superior -->
+			<ul class="topnav">									
 				<li><a class="active" href="#home">Home</a></li>
 				<li><a href="#menu1">Menú 1</a></li>
 				<li><a href="#menu2">Menú 2</a></li>
@@ -255,7 +260,7 @@
 
 	  <!-- Sección pie -->
 	  <div class="footer">
-			<p>hef-DM</p>
+			<p>hef-DM</p>				 <!-- <p> (párrafo) es el apropiado para distribuir el texto en párrafos -->
 	  </div>
 		
 	</div>

@@ -1,3 +1,22 @@
+:root {
+	/* Uso de Custom Properties */
+  --color-white: #f0f0f0;
+	--color-light-gray: #f1f1f1;
+	--color-gray2: #5e5e5e;
+	--color-gray3: #676c87;
+	--color-gray4: #d4dce3;
+	--color-black: #1e2127;
+	--color-blue: #0275cc;
+	--header-background-color: var(--color-light-gray);
+	--footer-background-color: var(--color-light-gray);
+	--topnav-background-color: var(--color-black);
+	--toggle-background-color: var(--color-black);
+	--toggle-color: var(--color-white);
+	
+	/* TODO: reemplazar los valores de colores por las Custom Properties*/
+	
+}
+
 /* Selector Universal: Estilo aplicado a todo el HTML */
 * {
   box-sizing: border-box;											/* Hace que el padding agregado y el border agregado ya cuenten dentro del width y height total del elemento */
@@ -128,24 +147,14 @@ tr:hover td {
   } */
 }
 
-:root {
-	/* Ejemplos de Custom Properties */
-	
-  --white: #f0f0f0;
-  --light-grey: #e4e4e4;
-  --black: #111111;
-  --dark-grey: #272727;
-  --bg: var(--white);
-  --txt: var(--black);
-  --dark-opacity: 0;
-  --light-opacity: 1;
-	
-}
+
 
 .checkbox {
   display: none;
 }
 
+/*TODO: sacar definitivamente*/
+/*
 .label {
   display: flex;
   align-items: center;
@@ -160,8 +169,8 @@ tr:hover td {
   transition: background 0.5s ease;
   cursor: pointer;
   z-index: 1;
-}
-
+}*/
+/*
 .label .ball {
   position: absolute;
   background-color: var(--bg);
@@ -173,18 +182,42 @@ tr:hover td {
   transform: translateX(0);
   transition: transform 0.3s ease, background-color 0.5s ease;
 }
+*/
 
-.checkbox:checked + .container .header .label .ball {
+.togglebackground {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  background: var(--toggle-background-color);
+  border-radius: 5rem;
+  padding: 0.5rem;
+  height: 2.5rem;
+  width: 5rem;
+  font-size: 1.5rem;
+  transition: background 0.4s ease;
+}
+
+.toggle {
+  position: absolute;
+  background: var(--toggle-color);
+  border-radius: 50%;
+  top: 0.25rem;
+  left: 0.25rem;
+  height: 2rem;
+  width: 2rem;
+	transform: translateX(0);
+  transition: transform 0.3s ease, background-color 0.5s ease;
+  cursor: pointer;
+}
+
+.checkbox:checked + .togglebackground .toggle {
   transform: translateX(2.5rem);
 }
 
-.checkbox:checked + .container {
+.checkbox:checked + .togglebackground {
+	--toggle-background-color: var(--color-blue);
+
   /* TODO: Agregar todas las Custom Properties necesarias y luego siguiendo el ejemplo de abajo, cambiar los colores para el "modo nocturno" */
-	/*
-	--bg: var(--black);
-  --txt: var(--white);
-  --dark-opacity: 1;
-  --light-opacity: 0;
-	--white: red;
-	*/
+
 }
