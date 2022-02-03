@@ -1,4 +1,4 @@
-/* Estilo aplicado a todo el HTML */
+/* Selector Universal: Estilo aplicado a todo el HTML */
 * {
   box-sizing: border-box;											/* Hace que el padding agregado y el border agregado ya cuenten dentro del width y height total del elemento */
 }
@@ -22,9 +22,9 @@ body {
 
 /* Estilo para la cabecera */
 .header {
-  grid-area: header;													/* grid-area: referencia a una o varias de las celdas del grid con un nombre específico.*/
-  background-color: #f1f1f1;									/* background-color define el color de fondo de un elemento */
-  text-align: center;													/* text-align especifica el alineamiento horizontal de un texto en un elemento */
+  grid-area: header;										/* grid-area: referencia a una o varias de las celdas del grid con un nombre específico.*/
+  background-color: #f1f1f1;						/* background-color define el color de fondo de un elemento */
+  text-align: center;										/* text-align especifica el alineamiento horizontal de un texto en un elemento */
 }
 
 /* Estilo para la sección principal */
@@ -41,10 +41,10 @@ body {
 
 /* Estilo para la barra de navegación */
 ul.topnav {
-  list-style-type: none;				/* list-style-type: especifica la apariencia del listado. El valor "none" quita todo estilo. */
+  list-style-type: none;		/* list-style-type: especifica la apariencia del listado. El valor "none" quita todo estilo. */
   margin: 0;
   padding: 0;
-  overflow: hidden;							/* especifica si recortar contenido, dibujar barras de desplazamiento o mostrar el contenido excedente en un elemento. */
+  overflow: hidden;					/* especifica si recortar contenido, dibujar barras de desplazamiento o mostrar el contenido excedente en un elemento. */
   background-color: #1e2127;
 }
 
@@ -53,7 +53,7 @@ ul.topnav li {
 	float: left;									/* float: ubica un elemento al lado izquierdo o derecho de su contenedor */
 }
 
-/* Estilo para los items y elementos anchor, dentro de la barra de navegación */
+/* Estilo para los elementos anchor, dentro de los items de lista, dentro de la barra de navegación */
 ul.topnav li a {
   display: block;								/* display: block declara un formato en forma de bloque*/
   color: white;
@@ -62,17 +62,17 @@ ul.topnav li a {
   text-decoration: none;				/* text-decoration: establece formato de texto subrayado/suprarrayado/tachado/parpadeo */
 }
 
-/* Estilo para los items y elementos anchor, que no son "active" y sobre el cual paso el mouse */
+/* Estilo para elementos anchor que no son "active" y sobre el cual poso el mouse, dentro de los items de lista, dentro de la barra de navegación  */
 ul.topnav li a:hover:not(.active) {
   background-color: #5e5e5e;
 }
 
-/* Estilo para los items y elementos anchor, que son "active" */
+/* Estilo para los elementos anchor que son "active", dentro de los items de lista, dentro de la barra de navegación  */
 ul.topnav li a.active {
   background-color: #0275cc;
 }
 
-/* Estilo para los items y elementos anchor, de clase "right" (los ubicados a la derecha de la barra) */
+/* Estilo para los items de lista de clase "right" (los ubicados a la derecha de la barra), dentro de la barra de navegación  */
 ul.topnav li.right {
   float: right;
 }
@@ -126,4 +126,65 @@ tr:hover td {
 	  'main main main main main main' 
       'footer footer footer footer footer footer';
   } */
+}
+
+:root {
+	/* Ejemplos de Custom Properties */
+	
+  --white: #f0f0f0;
+  --light-grey: #e4e4e4;
+  --black: #111111;
+  --dark-grey: #272727;
+  --bg: var(--white);
+  --txt: var(--black);
+  --dark-opacity: 0;
+  --light-opacity: 1;
+	
+}
+
+.checkbox {
+  display: none;
+}
+
+.label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  background: var(--txt);
+  border-radius: 5rem;
+  padding: 0.5rem;
+  height: 2.5rem;
+  width: 5rem;
+  font-size: 1.5rem;
+  transition: background 0.5s ease;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.label .ball {
+  position: absolute;
+  background-color: var(--bg);
+  border-radius: 50%;
+  top: 0.25rem;
+  left: 0.25rem;
+  height: 2rem;
+  width: 2rem;
+  transform: translateX(0);
+  transition: transform 0.3s ease, background-color 0.5s ease;
+}
+
+.checkbox:checked + .container .header .label .ball {
+  transform: translateX(2.5rem);
+}
+
+.checkbox:checked + .container {
+  /* TODO: Agregar todas las Custom Properties necesarias y luego siguiendo el ejemplo de abajo, cambiar los colores para el "modo nocturno" */
+	/*
+	--bg: var(--black);
+  --txt: var(--white);
+  --dark-opacity: 1;
+  --light-opacity: 0;
+	--white: red;
+	*/
 }
