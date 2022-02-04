@@ -1,20 +1,19 @@
 :root {
 	/* Uso de Custom Properties */
   --color-white: #f0f0f0;
-	--color-light-gray: #f1f1f1;
-	--color-gray2: #5e5e5e;
-	--color-gray3: #676c87;
-	--color-gray4: #d4dce3;
+	--color-light-gray1: #f1f1f1;
+  --color-light-gray2: #eaeaea;
+	--color-gray1: #5e5e5e;
+	--color-gray2: #676c87;
+	--color-gray3: #d4dce3;
 	--color-black: #1e2127;
 	--color-blue: #0275cc;
-	--header-background-color: var(--color-light-gray);
-	--footer-background-color: var(--color-light-gray);
+  --cell-on-hover-color: #4f5167;
+	--header-background-color: var(--color-light-gray1);
+	--footer-background-color: var(--color-light-gray1);
 	--topnav-background-color: var(--color-black);
 	--toggle-background-color: var(--color-black);
 	--toggle-color: var(--color-white);
-	
-	/* TODO: reemplazar los valores de colores por las Custom Properties*/
-	
 }
 
 /* Selector Universal: Estilo aplicado a todo el HTML */
@@ -41,8 +40,8 @@ body {
 
 /* Estilo para la cabecera */
 .header {
-  grid-area: header;										/* grid-area: referencia a una o varias de las celdas del grid con un nombre específico.*/
-  background-color: #f1f1f1;						/* background-color define el color de fondo de un elemento */
+  grid-area: header;                    /* grid-area: referencia a una o varias de las celdas del grid con un nombre específico.*/
+  background-color: var(--header-background-color);          /* background-color define el color de fondo de un elemento */
   text-align: center;										/* text-align especifica el alineamiento horizontal de un texto en un elemento */
 }
 
@@ -54,7 +53,7 @@ body {
 /* Estilo para el pie */
 .footer {
   grid-area: footer;
-  background-color: #f1f1f1;
+  background-color: var(--footer-background-color);
   text-align: center;
 }
 
@@ -64,7 +63,7 @@ ul.topnav {
   margin: 0;
   padding: 0;
   overflow: hidden;					/* especifica si recortar contenido, dibujar barras de desplazamiento o mostrar el contenido excedente en un elemento. */
-  background-color: #1e2127;
+  background-color: var(--topnav-background-color);
 }
 
 /* Estilo para los items de la barra de navegación */
@@ -83,12 +82,12 @@ ul.topnav li a {
 
 /* Estilo para elementos anchor que no son "active" y sobre el cual poso el mouse, dentro de los items de lista, dentro de la barra de navegación  */
 ul.topnav li a:hover:not(.active) {
-  background-color: #5e5e5e;
+  background-color: var(--color-gray1);
 }
 
 /* Estilo para los elementos anchor que son "active", dentro de los items de lista, dentro de la barra de navegación  */
 ul.topnav li a.active {
-  background-color: #0275cc;
+  background-color: var(--color-blue);
 }
 
 /* Estilo para los items de lista de clase "right" (los ubicados a la derecha de la barra), dentro de la barra de navegación  */
@@ -98,11 +97,11 @@ ul.topnav li.right {
 
 /* Estilo para todas las partes de la tabla */
 table {
-  background: #ffffff;								/* "background: #ffffff" equivale a "background-color: #ffffff" */
+  background: white;              /* "background: white" equivale a "background-color: white" */
   border-collapse: collapse;					/* "border-collapse: collapse" hace que las celdas compartan bordes */
   margin: auto;												/* "margin: auto" indica el margen en "automático" para los cuatro lados de la tabla */
   width: 98%; 												/* width: especifica el ancho del area de contenido de un elemento  */
-  color:#676c87;											/* color: Selecciona el valor de color de primer plano del contenido de elemento de texto y decoraciones de texto */
+  color:var(--color-gray2);                    /* color: Selecciona el valor de color de primer plano del contenido de elemento de texto y decoraciones de texto */
   font-size:medium;										/* font-size: especifica la dimensión de la letra */
   text-align:center;									/* text-align: especifica el alineamiento horizontal del texto */ 
   vertical-align:middle;							/* vertical-align: especifica el alineado vertical de un elemento en línea o una celda de una tabla */
@@ -115,22 +114,22 @@ th, td {
 
 /* Estilo para las celdas del encabezado de la tabla */
 th {
-  color:#d4dce3;					
-  background:#1e2127;
-  border: 2px solid #343a45;
+  color: var(--color-gray3);					
+  background:var(--color-black);
+  border: 2px solid var(--color-black);
   position: sticky;						/* position: sticky -> Elemento posicionado relativamente hasta que su bloque contenedor cruza un límite establecido */
   top:0;											/* Top: distancia entre el borde superior del elemento y el borde superior del bloque contenedor */ /* Necesario para sticky*/
 }
 
 /* Fila de datos de la tabla - Cambio de color en filas impares */ 
 tr:nth-child(odd) td {
-  background:#eaeaea;
+  background:var(--color-light-gray2);
 }
 
 /* Fila de datos de la tabla - Cambio de color al señalar fila */  
 tr:hover td {
-  background:#4f5167;
-  color:#ffffff;
+  background:var(--cell-on-hover-color);
+  color:white;
 }
 
 /* Responsive: Para áreas pequeñas se modifica la disposición de la barra de navegación y el grid*/
@@ -148,41 +147,11 @@ tr:hover td {
 }
 
 
+/* TODO: Analizar y comentar lo relativo al toggle */
 
 .checkbox {
   display: none;
 }
-
-/*TODO: sacar definitivamente*/
-/*
-.label {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  position: relative;
-  background: var(--txt);
-  border-radius: 5rem;
-  padding: 0.5rem;
-  height: 2.5rem;
-  width: 5rem;
-  font-size: 1.5rem;
-  transition: background 0.5s ease;
-  cursor: pointer;
-  z-index: 1;
-}*/
-/*
-.label .ball {
-  position: absolute;
-  background-color: var(--bg);
-  border-radius: 50%;
-  top: 0.25rem;
-  left: 0.25rem;
-  height: 2rem;
-  width: 2rem;
-  transform: translateX(0);
-  transition: transform 0.3s ease, background-color 0.5s ease;
-}
-*/
 
 .togglebackground {
   display: flex;
@@ -218,6 +187,6 @@ tr:hover td {
 .checkbox:checked + .togglebackground {
 	--toggle-background-color: var(--color-blue);
 
-  /* TODO: Agregar todas las Custom Properties necesarias y luego siguiendo el ejemplo de abajo, cambiar los colores para el "modo nocturno" */
+  /* TODO: Cambiar los colores para el "modo nocturno" */
 
 }
