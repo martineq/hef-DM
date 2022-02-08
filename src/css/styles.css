@@ -14,6 +14,7 @@
 	--topnav-background-color: var(--color-black);
 	--toggle-background-color: var(--color-black);
 	--toggle-color: var(--color-white);
+   /* TODO: Ver si hacen falta todos estos colores o si se reduce su cantidad */
 }
 
 /* Selector Universal: Estilo aplicado a todo el HTML */
@@ -61,7 +62,7 @@ body {
 ul.topnav {
   list-style-type: none;		/* list-style-type: especifica la apariencia del listado. El valor "none" quita todo estilo. */
   margin: 0;
-  padding: 0;
+  padding: 0;               /* padding: espacio de relleno requerido por todos los lados de un elemento */ 
   overflow: hidden;					/* especifica si recortar contenido, dibujar barras de desplazamiento o mostrar el contenido excedente en un elemento. */
   background-color: var(--topnav-background-color);
 }
@@ -109,7 +110,7 @@ table {
 
 /* Estilo para las celdas del encabezado y las celdas de datos de la tabla */
 th, td {
-  padding:5px; 												/* padding: espacio de relleno requerido por todos los lados de un elemento */ 
+  padding:5px; 												
 }
 
 /* Estilo para las celdas del encabezado de la tabla */
@@ -132,7 +133,7 @@ tr:hover td {
   color:white;
 }
 
-/* Responsive: Para áreas pequeñas se modifica la disposición de la barra de navegación y el grid*/
+/* Responsive: Para áreas pequeñas se modifica la disposición de la barra de navegación y el grid */
 @media screen and (max-width: 600px) {
   ul.topnav li.right, ul.topnav li {
 	  float: none;
@@ -147,46 +148,53 @@ tr:hover td {
 }
 
 
-/* TODO: Analizar y comentar lo relativo al toggle */
 
+
+
+/* Quito el checkbox del layout */
 .checkbox {
-  display: none;
+  display: none;      /* "display: none" quita el layout para este elemento.*/
 }
 
+/* Representa el "fondo" del botón toggle */
 .togglebackground {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  position: relative;
+  align-items: center;  /* align-items establece el valor align-self (alineación dentro del bloque contenedor) sobre todos los descendientes directos de un grupo. */
+  justify-content: space-between; /* justify-content define cómo el navegador distribuye el espacio entre y alrededor de los items flex, a lo largo del eje principal de su contenedor */
+  position: relative;   /* position: relative - El elemento es posicionado de acuerdo al flujo normal del documento, y luego es desplazado con relación a sí mismo */
   background: var(--toggle-background-color);
-  border-radius: 5rem;
+  border-radius: 5rem;    /* border-radius establece el redondeo de las esquinas del elemento.  */
   padding: 0.5rem;
-  height: 2.5rem;
+  height: 2.5rem;         /* height especifica la altura del area de contenido de un elemento */
   width: 5rem;
   font-size: 1.5rem;
-  transition: background 0.4s ease;
+  transition: background 0.4s ease;   /* Define el efecto de la transición - nombre de la propiedad: background | duración: 0.4s | función: ease */
 }
 
+/* Representa el "interruptor" del botón toggle */
 .toggle {
   position: absolute;
   background: var(--toggle-color);
   border-radius: 50%;
-  top: 0.25rem;
-  left: 0.25rem;
+  top: 0.25rem; /* top - para position:absolute/fixed, determina la distancia entre el borde superior del elemento y el borde superior del bloque que lo contiene */
+  left: 0.25rem;/* left - para position:absolute/fixed, determina la distancia entre el margen izquierdo del elemento y el borde izquierdo de su bloque contenedor */
   height: 2rem;
   width: 2rem;
-	transform: translateX(0);
-  transition: transform 0.3s ease, background-color 0.5s ease;
-  cursor: pointer;
+	transform: translateX(0);   /* transform permite modificar el espacio de coordenadas del modelo de formato visual CSS. translateX recoloca un elemento en el eje horizontal */
+  transition: transform 0.3s ease, background-color 0.5s ease; /* propiedad: transform | duración: 0.3s | función: ease || propiedad: background-color | duración: 0.5s | función: ease */
+  cursor: pointer;    /* especifica el tipo de cursor que se mostrara cuando este se encuentre sobre un elemento. */
 }
 
+/* Cuando le tildo la checkbox realizo una acción en el "interruptor" del botón toggle */
 .checkbox:checked + .togglebackground .toggle {
-  transform: translateX(2.5rem);
+  transform: translateX(2.5rem);    /* Muevo el "interruptor" del botón toggle */
 }
 
+/* Cuando le tildo la checkbox realizo una acción en el "fondo" del botón toggle */
 .checkbox:checked + .togglebackground {
-	--toggle-background-color: var(--color-blue);
+	--toggle-background-color: var(--color-blue); /* Cambio de color el "fondo" del botón toggle  */
 
-  /* TODO: Cambiar los colores para el "modo nocturno" */
+  /* Cambio los colores de la página para visualizar un "modo nocturno" */
+      /* TODO: Cambiar los colores para el "modo nocturno" */
 
 }
