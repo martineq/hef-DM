@@ -6,15 +6,36 @@
 	--color-gray1: #5e5e5e;
 	--color-gray2: #676c87;
 	--color-gray3: #d4dce3;
+	--color-dark-gray:#3b3b3b;
 	--color-black: #1e2127;
 	--color-blue: #0275cc;
-  --cell-on-hover-color: #4f5167;
-	--header-background-color: var(--color-light-gray1);
-	--footer-background-color: var(--color-light-gray1);
-	--topnav-background-color: var(--color-black);
-	--toggle-background-color: var(--color-black);
+	--color-blue-gray: #4f5167;
+
+	--container-bg-color: var(--color-white);
+	--container-txt-color: var(--color-black);
+  --header-bg-color: var(--color-light-gray1);
+	--footer-bg-color: var(--color-light-gray1);
+	--toggle-off-bg-color: var(--color-black);
+	--toggle-on-bg-color: var(--color-blue);
+	--toggle-bg-color: var(--toggle-off-bg-color);
 	--toggle-color: var(--color-white);
-   /* TODO: Ver si hacen falta todos estos colores o si se reduce su cantidad */
+	--topnav-txt-color: var(--color-white);
+	--topnav-bg-color: var(--color-black);
+	--topnav-hover-bg-color: var(--color-gray1);
+	--topnav-active-bg-color: var(--color-blue);
+	--table-bg-color: var(--color-white);
+	--table-txt-color: var(--color-gray2);
+	--table-head-txt-color: var(--color-gray3);
+	--table-head-bg-color: var(--color-black);
+	--table-head-border-color: var(--color-black);
+	--table-odd-row-bg-color: var(--color-light-gray2);
+	--table-row-hover-bg-color: var(--color-blue-gray);
+	--table-row-hover-txt-color: var(--color-white);
+	
+	--txt-dark-mode-color: var(--color-white);
+	--bg-dark-mode-color: var(--color-black);
+	--focus-dark-mode-color: var(--color-dark-gray);
+	
 }
 
 /* Selector Universal: Estilo aplicado a todo el HTML */
@@ -30,10 +51,17 @@ body {
   line-height: 1.5;														/* line-height establece la altura de una casilla remarcada por líneas.*/
 }
 
+/* Quito el checkbox del layout */
+.checkbox {
+  display: none;      /* "display: none" quita el layout para este elemento.*/
+}
+
 /* Container tipo grid */
 .container {
   display: grid;															/* display: grid define un layout tipo grid.*/
-  grid-template-areas: 												/* grid-template-areas especifica nombres para cada una de las áreas del grid */
+	color: var(--container-txt-color);	/* color: Selecciona el valor de color de primer plano del contenido de elemento de texto y decoraciones de texto */
+	background-color: var(--container-bg-color);/* background-color define el color de fondo de un elemento */
+	grid-template-areas: 												/* grid-template-areas especifica nombres para cada una de las áreas del grid */
     'header header header header header header' 
     'main main main main main main' 
     'footer footer footer footer footer footer';
@@ -42,7 +70,7 @@ body {
 /* Estilo para la cabecera */
 .header {
   grid-area: header;                    /* grid-area: referencia a una o varias de las celdas del grid con un nombre específico.*/
-  background-color: var(--header-background-color);          /* background-color define el color de fondo de un elemento */
+  background-color: var(--header-bg-color);          
   text-align: center;										/* text-align especifica el alineamiento horizontal de un texto en un elemento */
 }
 
@@ -54,8 +82,64 @@ body {
 /* Estilo para el pie */
 .footer {
   grid-area: footer;
-  background-color: var(--footer-background-color);
+  background-color: var(--footer-bg-color);
   text-align: center;
+}
+
+/* Representa el "fondo" del botón toggle */
+.togglebackground {
+  display: flex;
+  align-items: center;	/* align-items establece el valor align-self (alineación dentro del bloque contenedor) sobre los descendientes directos de un grupo. */
+  justify-content: space-between; /* justify-content define cómo el navegador distribuye el espacio entre y alrededor de los items flex, a lo largo del eje principal de su contenedor */
+  position: relative;   /* position: relative - El elemento es posicionado de acuerdo al flujo normal del documento, y luego es desplazado con relación a sí mismo */
+  background: var(--toggle-bg-color);
+  border-radius: 5rem;    /* border-radius establece el redondeo de las esquinas del elemento.  */
+  padding: 0.5rem;
+  height: 2.5rem;         /* height especifica la altura del area de contenido de un elemento */
+  width: 5rem;
+  font-size: 1.5rem;
+  transition: background 0.4s ease;   /* Define el efecto de la transición - nombre de la propiedad: background | duración: 0.4s | función: ease */
+}
+
+/* Representa el "interruptor" del botón toggle */
+.toggle {
+  position: absolute;
+  background: var(--toggle-color);
+	cursor: pointer;    /* especifica el tipo de cursor que se mostrara cuando este se encuentre sobre un elemento. */
+  border-radius: 50%;
+  top: 0.25rem; /* top - para position:absolute/fixed, determina la distancia entre el borde superior del elemento y el borde superior del bloque que lo contiene */
+  left: 0.25rem;/* left - para position:absolute/fixed, determina la distancia entre el margen izquierdo del elemento y el borde izquierdo de su bloque contenedor */
+  height: 2rem;
+  width: 2rem;  
+  transition: transform 0.3s ease;	/* propiedad: transform | duración: 0.3s | función: ease */
+}
+
+/* Cuando le tildo la checkbox muevo el "interruptor" del botón toggle */
+.checkbox:checked + .container .header .togglebackground .toggle {
+  transform: translateX(2.5rem);	/* transform permite modificar el espacio de coordenadas del modelo de formato visual CSS. translateX recoloca un elemento en el eje horizontal */
+}
+
+/* Cuando le tildo la checkbox realizo una acción en el "fondo" del botón toggle */
+.checkbox:checked + .container {
+	--toggle-bg-color: var(--toggle-on-bg-color);		/* Cambio de color el "fondo" del botón toggle  */
+
+  /* Cambio los colores de la página para visualizar un "modo nocturno" (Nota: no fueron elegidos estéticamente, sólo para verificar funcionamiento) */
+	--container-bg-color: var(--bg-dark-mode-color);
+	--container-txt-color: var(--txt-dark-mode-color);
+  --header-bg-color: var(--bg-dark-mode-color);
+	--footer-bg-color: var(--bg-dark-mode-color);
+	--topnav-txt-color: var(--txt-dark-mode-color);
+	--topnav-bg-color: var(--bg-dark-mode-color);
+	--topnav-hover-bg-color: var(--bg-dark-mode-color);
+	--topnav-active-bg-color: var(--focus-dark-mode-color);
+	--table-bg-color: var(--bg-dark-mode-color);
+	--table-txt-color: var(--txt-dark-mode-color);
+	--table-odd-row-bg-color: var(--bg-dark-mode-color);
+	--table-head-txt-color: var(--txt-dark-mode-color);
+	--table-head-bg-color: var(--bg-dark-mode-color);
+	--table-head-border-color: var(--bg-dark-mode-color);
+	--table-row-hover-bg-color: var(--focus-dark-mode-color);
+	--table-row-hover-txt-color: var(--txt-dark-mode-color);
 }
 
 /* Estilo para la barra de navegación */
@@ -64,7 +148,7 @@ ul.topnav {
   margin: 0;
   padding: 0;               /* padding: espacio de relleno requerido por todos los lados de un elemento */ 
   overflow: hidden;					/* especifica si recortar contenido, dibujar barras de desplazamiento o mostrar el contenido excedente en un elemento. */
-  background-color: var(--topnav-background-color);
+  background-color: var(--topnav-bg-color);
 }
 
 /* Estilo para los items de la barra de navegación */
@@ -75,7 +159,7 @@ ul.topnav li {
 /* Estilo para los elementos anchor, dentro de los items de lista, dentro de la barra de navegación */
 ul.topnav li a {
   display: block;								/* display: block declara un formato en forma de bloque*/
-  color: white;
+  color: var(--topnav-txt-color);
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;				/* text-decoration: establece formato de texto subrayado/suprarrayado/tachado/parpadeo */
@@ -83,12 +167,12 @@ ul.topnav li a {
 
 /* Estilo para elementos anchor que no son "active" y sobre el cual poso el mouse, dentro de los items de lista, dentro de la barra de navegación  */
 ul.topnav li a:hover:not(.active) {
-  background-color: var(--color-gray1);
+  background-color: var(--topnav-hover-bg-color);
 }
 
 /* Estilo para los elementos anchor que son "active", dentro de los items de lista, dentro de la barra de navegación  */
 ul.topnav li a.active {
-  background-color: var(--color-blue);
+  background-color: var(--topnav-active-bg-color);
 }
 
 /* Estilo para los items de lista de clase "right" (los ubicados a la derecha de la barra), dentro de la barra de navegación  */
@@ -98,39 +182,39 @@ ul.topnav li.right {
 
 /* Estilo para todas las partes de la tabla */
 table {
-  background: white;              /* "background: white" equivale a "background-color: white" */
+  background: var(--table-bg-color);									/* "background: white" equivale a "background-color: white" */
   border-collapse: collapse;					/* "border-collapse: collapse" hace que las celdas compartan bordes */
   margin: auto;												/* "margin: auto" indica el margen en "automático" para los cuatro lados de la tabla */
   width: 98%; 												/* width: especifica el ancho del area de contenido de un elemento  */
-  color:var(--color-gray2);                    /* color: Selecciona el valor de color de primer plano del contenido de elemento de texto y decoraciones de texto */
-  font-size:medium;										/* font-size: especifica la dimensión de la letra */
-  text-align:center;									/* text-align: especifica el alineamiento horizontal del texto */ 
-  vertical-align:middle;							/* vertical-align: especifica el alineado vertical de un elemento en línea o una celda de una tabla */
+  color: var(--table-txt-color);			
+  font-size: medium;									/* font-size: especifica la dimensión de la letra */
+  text-align: center;									/* text-align: especifica el alineamiento horizontal del texto */ 
+  vertical-align: middle;							/* vertical-align: especifica el alineado vertical de un elemento en línea o una celda de una tabla */
 }
 
 /* Estilo para las celdas del encabezado y las celdas de datos de la tabla */
 th, td {
-  padding:5px; 												
+  padding: 5px; 												
 }
 
 /* Estilo para las celdas del encabezado de la tabla */
 th {
-  color: var(--color-gray3);					
-  background:var(--color-black);
-  border: 2px solid var(--color-black);
+  color: var(--table-head-txt-color);					
+  background: var(--table-head-bg-color);
+  border: 2px solid var(--table-head-border-color);
   position: sticky;						/* position: sticky -> Elemento posicionado relativamente hasta que su bloque contenedor cruza un límite establecido */
-  top:0;											/* Top: distancia entre el borde superior del elemento y el borde superior del bloque contenedor */ /* Necesario para sticky*/
+  top: 0;											/* Top: distancia entre el borde superior del elemento y el borde superior del bloque contenedor */ /* Necesario para sticky*/
 }
 
 /* Fila de datos de la tabla - Cambio de color en filas impares */ 
 tr:nth-child(odd) td {
-  background:var(--color-light-gray2);
+  background: var(--table-odd-row-bg-color);
 }
 
 /* Fila de datos de la tabla - Cambio de color al señalar fila */  
 tr:hover td {
-  background:var(--cell-on-hover-color);
-  color:white;
+  background: var(--table-row-hover-bg-color);
+  color: var(--table-row-hover-txt-color);
 }
 
 /* Responsive: Para áreas pequeñas se modifica la disposición de la barra de navegación y el grid */
@@ -145,56 +229,4 @@ tr:hover td {
 	  'main main main main main main' 
       'footer footer footer footer footer footer';
   } */
-}
-
-
-
-
-
-/* Quito el checkbox del layout */
-.checkbox {
-  display: none;      /* "display: none" quita el layout para este elemento.*/
-}
-
-/* Representa el "fondo" del botón toggle */
-.togglebackground {
-  display: flex;
-  align-items: center;  /* align-items establece el valor align-self (alineación dentro del bloque contenedor) sobre todos los descendientes directos de un grupo. */
-  justify-content: space-between; /* justify-content define cómo el navegador distribuye el espacio entre y alrededor de los items flex, a lo largo del eje principal de su contenedor */
-  position: relative;   /* position: relative - El elemento es posicionado de acuerdo al flujo normal del documento, y luego es desplazado con relación a sí mismo */
-  background: var(--toggle-background-color);
-  border-radius: 5rem;    /* border-radius establece el redondeo de las esquinas del elemento.  */
-  padding: 0.5rem;
-  height: 2.5rem;         /* height especifica la altura del area de contenido de un elemento */
-  width: 5rem;
-  font-size: 1.5rem;
-  transition: background 0.4s ease;   /* Define el efecto de la transición - nombre de la propiedad: background | duración: 0.4s | función: ease */
-}
-
-/* Representa el "interruptor" del botón toggle */
-.toggle {
-  position: absolute;
-  background: var(--toggle-color);
-  border-radius: 50%;
-  top: 0.25rem; /* top - para position:absolute/fixed, determina la distancia entre el borde superior del elemento y el borde superior del bloque que lo contiene */
-  left: 0.25rem;/* left - para position:absolute/fixed, determina la distancia entre el margen izquierdo del elemento y el borde izquierdo de su bloque contenedor */
-  height: 2rem;
-  width: 2rem;
-	transform: translateX(0);   /* transform permite modificar el espacio de coordenadas del modelo de formato visual CSS. translateX recoloca un elemento en el eje horizontal */
-  transition: transform 0.3s ease, background-color 0.5s ease; /* propiedad: transform | duración: 0.3s | función: ease || propiedad: background-color | duración: 0.5s | función: ease */
-  cursor: pointer;    /* especifica el tipo de cursor que se mostrara cuando este se encuentre sobre un elemento. */
-}
-
-/* Cuando le tildo la checkbox realizo una acción en el "interruptor" del botón toggle */
-.checkbox:checked + .togglebackground .toggle {
-  transform: translateX(2.5rem);    /* Muevo el "interruptor" del botón toggle */
-}
-
-/* Cuando le tildo la checkbox realizo una acción en el "fondo" del botón toggle */
-.checkbox:checked + .togglebackground {
-	--toggle-background-color: var(--color-blue); /* Cambio de color el "fondo" del botón toggle  */
-
-  /* Cambio los colores de la página para visualizar un "modo nocturno" */
-      /* TODO: Cambiar los colores para el "modo nocturno" */
-
 }
