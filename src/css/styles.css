@@ -1,41 +1,41 @@
 :root {
 	/* Uso de Custom Properties */
-  --color-white: #f0f0f0;
+  --color-white-gray: #f0f0f0;
 	--color-light-gray1: #f1f1f1;
   --color-light-gray2: #eaeaea;
 	--color-gray1: #5e5e5e;
 	--color-gray2: #676c87;
 	--color-gray3: #d4dce3;
-	--color-dark-gray:#3b3b3b;
+	--color-dark-gray: #3b3b3b;
 	--color-black: #1e2127;
 	--color-blue: #0275cc;
 	--color-blue-gray: #4f5167;
 
-	--container-bg-color: var(--color-white);
+	--container-bg-color: white;
 	--container-txt-color: var(--color-black);
   --header-bg-color: var(--color-light-gray1);
 	--footer-bg-color: var(--color-light-gray1);
 	--toggle-off-bg-color: var(--color-black);
 	--toggle-on-bg-color: var(--color-blue);
 	--toggle-bg-color: var(--toggle-off-bg-color);
-	--toggle-color: var(--color-white);
-	--topnav-txt-color: var(--color-white);
+	--toggle-color: var(--color-white-gray);
+	--topnav-txt-color: var(--color-white-gray);
 	--topnav-bg-color: var(--color-black);
 	--topnav-hover-bg-color: var(--color-gray1);
 	--topnav-active-bg-color: var(--color-blue);
-	--table-bg-color: var(--color-white);
+	--table-bg-color: white;
 	--table-txt-color: var(--color-gray2);
 	--table-head-txt-color: var(--color-gray3);
 	--table-head-bg-color: var(--color-black);
 	--table-head-border-color: var(--color-black);
 	--table-odd-row-bg-color: var(--color-light-gray2);
 	--table-row-hover-bg-color: var(--color-blue-gray);
-	--table-row-hover-txt-color: var(--color-white);
-	
-	--txt-dark-mode-color: var(--color-white);
+	--table-row-hover-txt-color: var(--color-white-gray);
+
+	--txt-dark-mode-color: var(--color-white-gray);
 	--bg-dark-mode-color: var(--color-black);
 	--focus-dark-mode-color: var(--color-dark-gray);
-	
+
 }
 
 /* Selector Universal: Estilo aplicado a todo el HTML */
@@ -88,9 +88,7 @@ body {
 
 /* Representa el "fondo" del botón toggle */
 .togglebackground {
-  display: flex;
-  align-items: center;	/* align-items establece el valor align-self (alineación dentro del bloque contenedor) sobre los descendientes directos de un grupo. */
-  justify-content: space-between; /* justify-content define cómo el navegador distribuye el espacio entre y alrededor de los items flex, a lo largo del eje principal de su contenedor */
+	margin: auto;					/* margin:auto se usa en este caso para centrar el elemento. */
   position: relative;   /* position: relative - El elemento es posicionado de acuerdo al flujo normal del documento, y luego es desplazado con relación a sí mismo */
   background: var(--toggle-bg-color);
   border-radius: 5rem;    /* border-radius establece el redondeo de las esquinas del elemento.  */
@@ -98,7 +96,7 @@ body {
   height: 2.5rem;         /* height especifica la altura del area de contenido de un elemento */
   width: 5rem;
   font-size: 1.5rem;
-  transition: background 0.4s ease;   /* Define el efecto de la transición - nombre de la propiedad: background | duración: 0.4s | función: ease */
+  transition: background 0.4s ease;   /* Define el efecto de la transición - Nombre de la propiedad: background | Duración: 0.4s | Función: ease */
 }
 
 /* Representa el "interruptor" del botón toggle */
@@ -182,7 +180,7 @@ ul.topnav li.right {
 
 /* Estilo para todas las partes de la tabla */
 table {
-  background: var(--table-bg-color);									/* "background: white" equivale a "background-color: white" */
+  background: var(--table-bg-color);									/* "background: " equivale a "background-color: " */
   border-collapse: collapse;					/* "border-collapse: collapse" hace que las celdas compartan bordes */
   margin: auto;												/* "margin: auto" indica el margen en "automático" para los cuatro lados de la tabla */
   width: 98%; 												/* width: especifica el ancho del area de contenido de un elemento  */
@@ -226,7 +224,7 @@ tr:hover td {
   /*.container  {
     grid-template-areas: 
       'header header header header header header' 
-	  'main main main main main main' 
+			'main main main main main main' 
       'footer footer footer footer footer footer';
   } */
 }
