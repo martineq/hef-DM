@@ -1,7 +1,6 @@
 <!DOCTYPE html>		<!-- Declaro el documento como HTML -->
 <html lang="es-AR">	<!-- Declaro el idioma del contenido de mi página HTML -->
 
-<!-- Sección head -->
 <head>
 	<!-- meta: metainformación. Sirve para aportar información sobre el documento -->
   <meta charset="UTF-8">	<!-- Codificación de caracteres utilizada -->
@@ -13,12 +12,36 @@
   <link rel="stylesheet" href="styles/styles.css">			<!-- rel: Describe la relación que mantiene el documento de destino con el documento presente  --> 
   <title>hef DM: Document Management</title>	<!-- Defino el título de la página HTML, importante para el SEO -->
   <link rel="icon" type="image/x-icon" href="images/favicon.ico">	<!-- Agrego el favicon de la página -->
-  
 </head>
 
-
-<!-- Sección body -->
 <body>
+	<div class="wrapper">
+		<div class="header">
+			<h1>Listado de pendientes</h1>
+		</div>
+		<div class="add-task">
+			<input id="new-task-input" type="text" placeholder="Agregar tarea..." />
+			<button class="add-task-btn">+</button>
+		</div>
+		<div class="task-list-header">
+			<h2>Pendientes</h2>
+			<button class="remove-complete-btn">Borrar los completados</button>
+		</div>
+		<div class="task-list-wrapper">
+			<ul class="task-list"></ul>
+		</div>
+	</div>
 
+	<template id="task-template">
+		<li class="task">
+			<input type="checkbox" />
+			<label>
+				<span class="check-mark">&#10004;</span>
+				<span class="custom-checkbox"></span>
+			</label>
+		</li>
+	</template>
+	
+  <script src="scripts/main.js"></script>
 </body>
 </html>
