@@ -10,13 +10,13 @@
   <meta name="description" content="hef DM">		<!-- name: Nombre al que se asocia la metainformación --> 
   <meta name="keywords" content="HTML">				<!-- name="keywords": palabras clave para ser usadas por los buscadores --> 
   <meta name="author" content="Mart">				<!-- name="author": define al autor de la página -->
-  <link rel="stylesheet" href="./css/styles.css"> 	<!-- rel="stylesheet": Define un recurso externo para ser usado como hoja de estilos --> 
+  <link rel="stylesheet" href="styles/styles.css"> 	<!-- rel="stylesheet": Define un recurso externo para ser usado como hoja de estilos --> 
   <title>hef DM: Document Management</title>	<!-- Defino el título de la página HTML, importante para el SEO -->
-  <link rel="icon" type="image/x-icon" href="favicon.ico">	<!-- Agrego el favicon de la página -->
+  <link rel="icon" type="image/x-icon" href="images/favicon.ico">	<!-- Agrego el favicon de la página -->
 </head>
 
 <!-- Sección body -->
-<body>
+<body onload="javascript:addRegistry()">
 
 	<!-- Elemento que cumple la funcionalidad de un toggle (será invisible), ubicado aquí porque activa a "container" con el operador + -->
 	<input type="checkbox" class="checkbox" id="checktoggle" />	<!-- type: El tipo de control a mostrar / id: identificador único en todo el documento -->
@@ -64,7 +64,7 @@
 					<th>Fecha Comprobante B</th>
 					</tr>
 				</thead>
-				<tbody>									<!-- <tbody> es usado para agrupar contenido del cuerpo de una tabla (los datos) -->
+				<tbody class="registry-list">									<!-- <tbody> es usado para agrupar contenido del cuerpo de una tabla (los datos) -->
 					<tr>
 					<td>Wang</td>						<!-- <td> indica que es un dato de tabla -->
 					<td>02/Nov/2020</td>
@@ -385,7 +385,39 @@
 	  <div class="footer">
 			<p>hef-DM</p>				 <!-- <p> (párrafo) es el apropiado para distribuir el texto en párrafos -->
 	  </div>
-		
+
 	</div>
+
+	<template id="header-template">
+		<tr>																		 
+		<th>Agente</th>													 
+		<th>Fecha</th>
+		<th>Empresa</th>
+		<th>Numero Documentacion</th>
+		<th>Nro Comprobante A</th>
+		<th>NCA Duplicado</th>
+		<th>Nro Comprobante B</th>
+		<th>NCB Duplicado</th>
+		<th>Monto Comprobante B</th>
+		<th>Fecha Comprobante B</th>
+		</tr>
+	</template>
+
+	<template id="registry-template">
+		<tr>
+		<td>Wang</td>
+		<td>11/Nov/2021</td>
+		<td>Empresa XYZ</td>
+		<td>474747/2021</td>
+		<td>595959</td>
+		<td></td>
+		<td>262626</td>
+		<td></td>
+		<td>651.99</td>
+		<td>11/Nov/2021</td>
+		</tr>
+	</template>
+
+	<script src="scripts/main.js"></script>
 </body>
 </html>
