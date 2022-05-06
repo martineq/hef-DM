@@ -16,7 +16,7 @@
 </head>
 
 <!-- Sección body -->
-<body onload="javascript:addRegistry()">
+<body>
 
 	<!-- Elemento que cumple la funcionalidad de un toggle (será invisible), ubicado aquí porque activa a "container" con el operador + -->
 	<input type="checkbox" class="checkbox" id="checktoggle" />	<!-- type: El tipo de control a mostrar / id: identificador único en todo el documento -->
@@ -50,333 +50,9 @@
 	  <div class="main">
 			<table>	<!-- El Elemento de Tabla HTML (<table>) representa datos en dos o mas dimensiones -->
 				<caption>Registro de Documentos</caption>		<!-- <caption> es el encargado de darle un título descriptivo a las tablas -->
-				<thead>																			<!-- <thead> es usado para agrupar contenido de títulos de una tabla -->
-					<tr>																			<!-- <tr> agrupa los datos de una fila de una tabla -->
-					<th>Agente</th>														<!-- <th> indica que es un encabezado de tabla -->
-					<th>Fecha</th>
-					<th>Empresa</th>
-					<th>Numero Documentacion</th>
-					<th>Nro Comprobante A</th>
-					<th>NCA Duplicado</th>
-					<th>Nro Comprobante B</th>
-					<th>NCB Duplicado</th>
-					<th>Monto Comprobante B</th>
-					<th>Fecha Comprobante B</th>
-					</tr>
+				<thead class="list-header">								<!-- <thead> es usado para agrupar contenido de títulos de una tabla -->
 				</thead>
-				<tbody class="registry-list">									<!-- <tbody> es usado para agrupar contenido del cuerpo de una tabla (los datos) -->
-					<tr>
-					<td>Wang</td>						<!-- <td> indica que es un dato de tabla -->
-					<td>02/Nov/2020</td>
-					<td>Empresa ABC</td>
-					<td>4651151/2020</td>
-					<td>48916</td>
-					<td></td>
-					<td>15656</td>
-					<td></td>
-					<td>651.36</td>
-					<td>01/Nov/2020</td>
-					</tr>
-					<tr>
-					<td>Wang</td>
-					<td>02/Nov/2020</td>
-					<td>Empresa ABC</td>
-					<td>4651151/2020</td>
-					<td>48916</td>
-					<td></td>
-					<td>15656</td>
-					<td></td>
-					<td>651.36</td>
-					<td>01/Nov/2020</td>
-					</tr>
-					<tr>
-					<td>Wang</td>
-					<td>02/Nov/2020</td>
-					<td>Empresa ABC</td>
-					<td>4651151/2020</td>
-					<td>48916</td>
-					<td></td>
-					<td>15656</td>
-					<td></td>
-					<td>651.36</td>
-					<td>01/Nov/2020</td>
-					</tr>
-					<tr>
-					<td>Wang</td>
-					<td>02/Nov/2020</td>
-					<td>Empresa ABC</td>
-					<td>4651151/2020</td>
-					<td>48916</td>
-					<td></td>
-					<td>15656</td>
-					<td></td>
-					<td>651.36</td>
-					<td>01/Nov/2020</td>
-					</tr>
-					<tr>
-					<td>Wang</td>
-					<td>02/Nov/2020</td>
-					<td>Empresa ABC</td>
-					<td>4651151/2020</td>
-					<td>48916</td>
-					<td></td>
-					<td>15656</td>
-					<td></td>
-					<td>651.36</td>
-					<td>01/Nov/2020</td>
-					</tr>
-					<tr>
-					<td>Wang</td>
-					<td>02/Nov/2020</td>
-					<td>Empresa ABC</td>
-					<td>4651151/2020</td>
-					<td>48916</td>
-					<td></td>
-					<td>15656</td>
-					<td></td>
-					<td>651.36</td>
-					<td>01/Nov/2020</td>
-					</tr>
-					<tr>
-					<td>Wang</td>
-					<td>02/Nov/2020</td>
-					<td>Empresa ABC</td>
-					<td>4651151/2020</td>
-					<td>48916</td>
-					<td></td>
-					<td>15656</td>
-					<td></td>
-					<td>651.36</td>
-					<td>01/Nov/2020</td>
-					</tr>
-					<tr>
-					<td>Wang</td>
-					<td>02/Nov/2020</td>
-					<td>Empresa ABC</td>
-					<td>4651151/2020</td>
-					<td>48916</td>
-					<td></td>
-					<td>15656</td>
-					<td></td>
-					<td>651.36</td>
-					<td>01/Nov/2020</td>
-					</tr>
-					<tr>
-					<td>Wang</td>
-					<td>02/Nov/2020</td>
-					<td>Empresa ABC</td>
-					<td>4651151/2020</td>
-					<td>48916</td>
-					<td></td>
-					<td>15656</td>
-					<td></td>
-					<td>651.36</td>
-					<td>01/Nov/2020</td>
-					</tr>
-					<tr>
-					<td>Wang</td>
-					<td>02/Nov/2020</td>
-					<td>Empresa ABC</td>
-					<td>4651151/2020</td>
-					<td>48916</td>
-					<td></td>
-					<td>15656</td>
-					<td></td>
-					<td>651.36</td>
-					<td>01/Nov/2020</td>
-					</tr>
-					<tr>
-					<td>Wang</td>
-					<td>02/Nov/2020</td>
-					<td>Empresa ABC</td>
-					<td>4651151/2020</td>
-					<td>48916</td>
-					<td></td>
-					<td>15656</td>
-					<td></td>
-					<td>651.36</td>
-					<td>01/Nov/2020</td>
-					</tr>
-					<tr>
-					<td>Wang</td>
-					<td>02/Nov/2020</td>
-					<td>Empresa ABC</td>
-					<td>4651151/2020</td>
-					<td>48916</td>
-					<td></td>
-					<td>15656</td>
-					<td></td>
-					<td>651.36</td>
-					<td>01/Nov/2020</td>
-					</tr>
-					<tr>
-					<td>Wang</td>
-					<td>02/Nov/2020</td>
-					<td>Empresa ABC</td>
-					<td>4651151/2020</td>
-					<td>48916</td>
-					<td></td>
-					<td>15656</td>
-					<td></td>
-					<td>651.36</td>
-					<td>01/Nov/2020</td>
-					</tr>
-					<tr>
-					<td>Wang</td>
-					<td>02/Nov/2020</td>
-					<td>Empresa ABC</td>
-					<td>4651151/2020</td>
-					<td>48916</td>
-					<td></td>
-					<td>15656</td>
-					<td></td>
-					<td>651.36</td>
-					<td>01/Nov/2020</td>
-					</tr>
-					<tr>
-					<td>Wang</td>
-					<td>02/Nov/2020</td>
-					<td>Empresa ABC</td>
-					<td>4651151/2020</td>
-					<td>48916</td>
-					<td></td>
-					<td>15656</td>
-					<td></td>
-					<td>651.36</td>
-					<td>01/Nov/2020</td>
-					</tr>
-					<tr>
-					<td>Wang</td>
-					<td>02/Nov/2020</td>
-					<td>Empresa ABC</td>
-					<td>4651151/2020</td>
-					<td>48916</td>
-					<td></td>
-					<td>15656</td>
-					<td></td>
-					<td>651.36</td>
-					<td>01/Nov/2020</td>
-					</tr>
-					<tr>
-					<td>Wang</td>
-					<td>02/Nov/2020</td>
-					<td>Empresa ABC</td>
-					<td>4651151/2020</td>
-					<td>48916</td>
-					<td></td>
-					<td>15656</td>
-					<td></td>
-					<td>651.36</td>
-					<td>01/Nov/2020</td>
-					</tr>
-					<tr>
-					<td>Wang</td>
-					<td>02/Nov/2020</td>
-					<td>Empresa ABC</td>
-					<td>4651151/2020</td>
-					<td>48916</td>
-					<td></td>
-					<td>15656</td>
-					<td></td>
-					<td>651.36</td>
-					<td>01/Nov/2020</td>
-					</tr>
-					<tr>
-					<td>Wang</td>
-					<td>02/Nov/2020</td>
-					<td>Empresa ABC</td>
-					<td>4651151/2020</td>
-					<td>48916</td>
-					<td></td>
-					<td>15656</td>
-					<td></td>
-					<td>651.36</td>
-					<td>01/Nov/2020</td>
-					</tr>
-					<tr>
-					<td>Wang</td>
-					<td>02/Nov/2020</td>
-					<td>Empresa ABC</td>
-					<td>4651151/2020</td>
-					<td>48916</td>
-					<td></td>
-					<td>15656</td>
-					<td></td>
-					<td>651.36</td>
-					<td>01/Nov/2020</td>
-					</tr>
-					<tr>
-					<td>Wang</td>
-					<td>02/Nov/2020</td>
-					<td>Empresa ABC</td>
-					<td>4651151/2020</td>
-					<td>48916</td>
-					<td></td>
-					<td>15656</td>
-					<td></td>
-					<td>651.36</td>
-					<td>01/Nov/2020</td>
-					</tr>
-					<tr>
-					<td>Wang</td>
-					<td>02/Nov/2020</td>
-					<td>Empresa ABC</td>
-					<td>4651151/2020</td>
-					<td>48916</td>
-					<td></td>
-					<td>15656</td>
-					<td></td>
-					<td>651.36</td>
-					<td>01/Nov/2020</td>
-					</tr>
-					<tr>
-					<td>Wang</td>
-					<td>02/Nov/2020</td>
-					<td>Empresa ABC</td>
-					<td>4651151/2020</td>
-					<td>48916</td>
-					<td></td>
-					<td>15656</td>
-					<td></td>
-					<td>651.36</td>
-					<td>01/Nov/2020</td>
-					</tr>
-					<tr>
-					<td>Wang</td>
-					<td>02/Nov/2020</td>
-					<td>Empresa ABC</td>
-					<td>4651151/2020</td>
-					<td>48916</td>
-					<td></td>
-					<td>15656</td>
-					<td></td>
-					<td>651.36</td>
-					<td>01/Nov/2020</td>
-					</tr>
-					<tr>
-					<td>Wang</td>
-					<td>02/Nov/2020</td>
-					<td>Empresa ABC</td>
-					<td>4651151/2020</td>
-					<td>48916</td>
-					<td></td>
-					<td>15656</td>
-					<td></td>
-					<td>651.36</td>
-					<td>01/Nov/2020</td>
-					</tr>
-					<tr>
-					<td>Wang</td>
-					<td>02/Nov/2020</td>
-					<td>Empresa ABC</td>
-					<td>4651151/2020</td>
-					<td>48916</td>
-					<td></td>
-					<td>15656</td>
-					<td></td>
-					<td>651.36</td>
-					<td>01/Nov/2020</td>
-					</tr>
+				<tbody class="document-list">								<!-- <tbody> es usado para agrupar contenido del cuerpo de una tabla (los datos) -->
 				</tbody>
 	    </table>
 	  </div>  
@@ -388,9 +64,10 @@
 
 	</div>
 
+	 <!-- Templates HTML  -->
 	<template id="header-template">
-		<tr>																		 
-		<th>Agente</th>													 
+		<tr>																			<!-- <tr> agrupa los datos de una fila de una tabla -->
+		<th>Agente</th>														<!-- <th> indica que es un encabezado de tabla -->
 		<th>Fecha</th>
 		<th>Empresa</th>
 		<th>Numero Documentacion</th>
@@ -403,9 +80,9 @@
 		</tr>
 	</template>
 
-	<template id="registry-template">
+	<template id="document-template">
 		<tr>
-		<td>Wang</td>
+		<td>Wang</td>															<!-- <td> indica que es un dato de tabla -->
 		<td>11/Nov/2021</td>
 		<td>Empresa XYZ</td>
 		<td>474747/2021</td>
@@ -418,6 +95,7 @@
 		</tr>
 	</template>
 
+	 <!-- Código JavaScript -->
 	<script src="scripts/main.js"></script>
 </body>
 </html>
