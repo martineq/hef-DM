@@ -7,11 +7,11 @@
   <meta charset="UTF-8">	<!-- Codificación de caracteres utilizada -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">	<!-- name="viewport": Define qué área de pantalla está disponible al renderizar un documento. "width=device-width" hace que el ancho de la página acompañe el ancho del dispositivo. "initial-scale=1.0" pone el nivel de zoom básico cuando se carga por primera vez la página.  --> 
   <meta http-equiv="X-UA-Compatible" content="ie=edge">		<!-- Especifica los métodos HTTP soportados por el servidor web --> 
-  <meta name="description" content="hef DM">		<!-- name: Nombre al que se asocia la metainformación --> 
-  <meta name="keywords" content="HTML">				<!-- name="keywords": palabras clave para ser usadas por los buscadores --> 
-  <meta name="author" content="Mart">				<!-- name="author": define al autor de la página -->
-  <link rel="stylesheet" href="styles/styles.css"> 	<!-- rel="stylesheet": Define un recurso externo para ser usado como hoja de estilos --> 
-  <title>hef DM: Document Management</title>	<!-- Defino el título de la página HTML, importante para el SEO -->
+  <meta name="description" content="hef DM">				<!-- name: Nombre al que se asocia la metainformación --> 
+  <meta name="keywords" content="HTML">						<!-- name="keywords": palabras clave para ser usadas por los buscadores --> 
+  <meta name="author" content="Mart">						<!-- name="author": define al autor de la página -->
+  <link rel="stylesheet" href="styles/styles.css"> 			<!-- rel="stylesheet": Define un recurso externo para ser usado como hoja de estilos --> 
+  <title>hef DM: Document Management</title>				<!-- Defino el título de la página HTML, importante para el SEO -->
   <link rel="icon" type="image/x-icon" href="images/favicon.ico">	<!-- Agrego el favicon de la página -->
 </head>
 
@@ -50,9 +50,9 @@
 	  <div class="main">
 			<table>	<!-- El Elemento de Tabla HTML (<table>) representa datos en dos o mas dimensiones -->
 				<caption>Registro de Documentos</caption>		<!-- <caption> es el encargado de darle un título descriptivo a las tablas -->
-				<thead class="list-header">								<!-- <thead> es usado para agrupar contenido de títulos de una tabla -->
+				<thead class="list-header">						<!-- <thead> es usado para agrupar contenido de títulos de una tabla -->
 				</thead>
-				<tbody class="document-list">								<!-- <tbody> es usado para agrupar contenido del cuerpo de una tabla (los datos) -->
+				<tbody class="document-list">					<!-- <tbody> es usado para agrupar contenido del cuerpo de una tabla (los datos) -->
 				</tbody>
 	    </table>
 	  </div>  
@@ -66,32 +66,32 @@
 
 	 <!-- Templates HTML  -->
 	<template id="header-template">
-		<tr>																			<!-- <tr> agrupa los datos de una fila de una tabla -->
-		<th>Agente</th>														<!-- <th> indica que es un encabezado de tabla -->
-		<th>Fecha</th>
-		<th>Empresa</th>
-		<th>Numero Documentacion</th>
-		<th>Nro Comprobante A</th>
-		<th>NCA Duplicado</th>
-		<th>Nro Comprobante B</th>
-		<th>NCB Duplicado</th>
-		<th>Monto Comprobante B</th>
-		<th>Fecha Comprobante B</th>
+		<tr>																	<!-- <tr> agrupa los datos de una fila de una tabla -->
+			<th id=templateHeaderN1></th>										<!-- <th> indica que es un encabezado de tabla -->
+			<th id=templateHeaderN2></th>
+			<th id=templateHeaderN3></th>
+			<th id=templateHeaderN4></th>
+			<th id=templateHeaderN5></th>
+			<th id=templateHeaderN6></th>
+			<th id=templateHeaderN7></th>
+			<th id=templateHeaderN8></th>
+			<th id=templateHeaderN9></th>
+			<th id=templateHeaderN10></th>
 		</tr>
 	</template>
 
 	<template id="document-template">
 		<tr>
-		<td>Wang</td>															<!-- <td> indica que es un dato de tabla -->
-		<td>11/Nov/2021</td>
-		<td>Empresa XYZ</td>
-		<td>474747/2021</td>
-		<td>595959</td>
-		<td></td>
-		<td>262626</td>
-		<td></td>
-		<td>651.99</td>
-		<td>11/Nov/2021</td>
+			<td id=templateDocumentN1></td>										<!-- <td> indica que es un dato de tabla -->
+			<td id=templateDocumentN2></td>
+			<td id=templateDocumentN3></td>
+			<td id=templateDocumentN4></td>
+			<td id=templateDocumentN5></td>
+			<td id=templateDocumentN6></td>
+			<td id=templateDocumentN7></td>
+			<td id=templateDocumentN8></td>
+			<td id=templateDocumentN9></td>
+			<td id=templateDocumentN10></td>
 		</tr>
 	</template>
 
