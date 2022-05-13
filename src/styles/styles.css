@@ -38,7 +38,7 @@
 
 }
 
-/* Selector Universal: Estilo aplicado a todo el HTML */
+/* (*) Selector Universal: Estilo aplicado a todo el HTML */
 * {
   box-sizing: border-box;											/* Hace que el padding agregado y el border agregado ya cuenten dentro del width y height total del elemento */
 }
@@ -52,7 +52,7 @@ body {
 }
 
 /* Quito el checkbox del layout */
-.checkbox {
+.checkbox {           /* ".checkbox" identifica a la class de ese mismo nombre*/
   display: none;      /* "display: none" quita el layout para este elemento.*/
 }
 
@@ -112,12 +112,12 @@ body {
   transition: transform 0.3s ease;	/* propiedad: transform | duración: 0.3s | función: ease */
 }
 
-/* Cuando le tildo la checkbox muevo el "interruptor" del botón toggle */
+/* Cuando tildo la checkbox muevo el "interruptor" del botón toggle */
 .checkbox:checked + .container .header .togglebackground .toggle {
   transform: translateX(2.5rem);	/* transform permite modificar el espacio de coordenadas del modelo de formato visual CSS. translateX recoloca un elemento en el eje horizontal */
 }
 
-/* Cuando le tildo la checkbox realizo una acción en el "fondo" del botón toggle */
+/* Cuando tildo la checkbox realizo una acción en el "fondo" del botón toggle */
 .checkbox:checked + .container {
 	--toggle-bg-color: var(--toggle-on-bg-color);		/* Cambio de color el "fondo" del botón toggle  */
 

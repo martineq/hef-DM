@@ -61,5 +61,5 @@ function addDocument() {
 	} 	
 }
 
-// Agrego un listener para que se active al cargar completamente el docummento HTML 
+// Agrego un listener el cual se activará al cargar completamente el docummento HTML 
 document.addEventListener("DOMContentLoaded", function(event) { addHeader(); addDocument(); } );
