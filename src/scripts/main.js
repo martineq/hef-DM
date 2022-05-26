@@ -24,7 +24,7 @@ function addHeader() {
 
 	// Cargo los datos de la cabecera genérica
 	for(const hd in headerData) { 
-		documentHeader.querySelector("#"+hd).innerText = headerData[hd];
+		documentHeader.querySelector(`#${hd}`).innerText = headerData[hd];
 	}
 
 	// Inserto la cabecera
@@ -55,7 +55,7 @@ function addRows() {
 
 		// Cargo los datos del registro genérico
 		for(const dd in documentData) { 
-			documentElement.querySelector("#"+dd).innerText = documentData[dd];
+			documentElement.querySelector(`#${dd}`).innerText = documentData[dd];
 		}
 		
 		// Inserto el registro
@@ -75,4 +75,4 @@ function addTable() {
 }
 
 // Agrego un listener el cual se activará al cargar completamente el docummento HTML 
-document.addEventListener("DOMContentLoaded", function(event) { addTable(); } );
+document.addEventListener("DOMContentLoaded", event => addTable() );  // TODO: ¿Se puede poner directamente la función?
