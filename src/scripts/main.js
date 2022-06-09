@@ -23,7 +23,7 @@ function addHeader() {
 	const documentHeader = headerTemplate.content.cloneNode(true);	// Devuelve un duplicado del nodo en el que este método fue llamado. Parámetros: externalNode -> "deep" (Opcional) true si los hijos del nodo también deben ser clonados, o false para clonar únicamente al nodo.
 
 	// Cargo los datos de la cabecera genérica
-	for(const hd in headerData) { 
+	for(const hd in headerData) {		// "for..in" está diseñado para iterar sobre las propiedades de un objeto, obteniendo la clave de cada propiedad. Usando esta clave en combinación con la sintaxis de corchetes del objeto se obtienen los valores del mismo.
 		documentHeader.querySelector(`#${hd}`).innerText = headerData[hd];
 	}
 
