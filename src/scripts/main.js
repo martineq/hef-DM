@@ -1,14 +1,69 @@
 
 ////@ts-check // TODO: Ver uso de @ts-check para archivos JS, ya que da advertencias propias de TypeScript
 "use strict";
+// TODO: Cada vez que hago document.querySelector() puede que el valor vuelva null, tener en cuenta esos casos
 
-// Función para agregar la cabecera a la tabla
+// Agrego la cabecera a la tabla existente en el html
 function addHeader() {
-	const listHeader = document.querySelector(".list-header");				// Obtengo acceso a la cabecera de la tabla de datos (el thead)
+	const listHeader = document.querySelector("#list-header");				// Obtengo acceso a la cabecera de la tabla de datos (el thead)
 	const headerTemplate = document.querySelector("#header-template");		// Obtengo acceso al template de la cabecera para la tabla de datos
 
-	// Datos preparados para cargar una cabecera genérica
-	const headerData = {
+	// Obtengo los datos preparados para cargar una cabecera
+	const headerData = readHeaderFromSource();
+
+	// Creo una copia de la cabecera a insertar 
+	const documentHeader = headerTemplate.content.cloneNode(true);	// Devuelve un duplicado del nodo en el que este método fue llamado. Parámetros: externalNode -> "deep" (Opcional) true si los hijos del nodo también deben ser clonados, o false para clonar únicamente al nodo.
+
+	// Cargo los datos de la cabecera obtenida
+	// "for..in" está diseñado para iterar sobre las propiedades de un objeto, obteniendo la clave de cada propiedad. Usando esta clave en combinación con la sintaxis de corchetes del objeto se obtienen los valores del mismo.
+	for(const hd in headerData) {	
+		documentHeader.querySelector(`#${hd}`).innerText = headerData[hd];
+	}
+
+	// Inserto la cabecera
+	listHeader.appendChild(documentHeader);	// Agrega un nuevo nodo al final de la lista de un elemento hijo de un elemento padre especificado.
+}
+
+// Agrego registros con datos a la tabla existente en el html
+function addRows() {
+	const documentList = document.querySelector("#document-list");			// Obtengo acceso a la tabla de datos (el tbody)
+	const documentTemplate = document.querySelector("#document-template");	// Obtengo acceso al template de registro para la tabla de datos
+
+	// Obtengo los datos preparados para cargar un registro
+	const documentData = readRowFromSource();
+
+	// Repito la secuencia para simular la lectura de varios registros
+	for (let i = 0; i < 10; i++) {
+
+		// Creo una copia de un registro a insertar
+		const documentElement = documentTemplate.content.cloneNode(true);
+
+		// Cargo los datos del registro obtenido
+		for (const dd in documentData) {
+			documentElement.querySelector(`#${dd}`).innerText = documentData[dd];
+		}
+
+		// Inserto el registro
+		documentList.appendChild(documentElement);
+	}
+}
+
+// Agrego en una tabla, la cabecera y el cuerpo con los datos
+function addTable() {
+	// Verifica si el browser soporta la funcionalidad <template> de HTML, buscando la existencia del atributo 'content'
+	if ('content' in document.createElement('template')) {
+		addHeader();
+		addRows();
+	} else {
+		console.error("El browser no soporta la funcionalidad <template> de HTML.");
+	}
+}
+
+// Abstracción que representa la lectura de la cabecera de una tabla desde una fuente externa 
+function readHeaderFromSource() {
+
+	// Datos preparados para cargar un registro, simulan obtenerse desde una fuente
+	const headerFromSource = {
 		templateHeaderN1: "Agente",
 		templateHeaderN2: "Fecha",
 		templateHeaderN3: "Empresa",
@@ -21,26 +76,15 @@ function addHeader() {
 		templateHeaderN10: "Fecha Comprobante B"
 	};
 
-	// Creo una copia de la cabecera a insertar 
-	const documentHeader = headerTemplate.content.cloneNode(true);	// Devuelve un duplicado del nodo en el que este método fue llamado. Parámetros: externalNode -> "deep" (Opcional) true si los hijos del nodo también deben ser clonados, o false para clonar únicamente al nodo.
-
-	// Cargo los datos de la cabecera genérica
-	// "for..in" está diseñado para iterar sobre las propiedades de un objeto, obteniendo la clave de cada propiedad. Usando esta clave en combinación con la sintaxis de corchetes del objeto se obtienen los valores del mismo.
-	for(const hd in headerData) {		
-		documentHeader.querySelector(`#${hd}`).innerText = headerData[hd];
-	}
-
-	// Inserto la cabecera
-	listHeader.appendChild(documentHeader);	// Agrega un nuevo nodo al final de la lista de un elemento hijo de un elemento padre especificado.
+	return headerFromSource;
 }
 
-// Función para agregar registros con datos en la tabla
-function addRows() {
-	const documentList = document.querySelector(".document-list");			// Obtengo acceso a la tabla de datos (el tbody)
-	const documentTemplate = document.querySelector("#document-template");	// Obtengo acceso al template de registro para la tabla de datos
 
-	// Datos preparados para cargar un registro genérico
-	const documentData = {
+// Abstracción que representa la lectura de la fila de una tabla desde una fuente externa 
+function readRowFromSource() {
+
+	// Datos preparados para cargar un registro, simulan obtenerse desde una fuente
+	const rowFromSource = {
 		templateDocumentN1: "Wang",
 		templateDocumentN2: "11/Nov/2021",
 		templateDocumentN3: "Empresa XYZ",
@@ -53,31 +97,9 @@ function addRows() {
 		templateDocumentN10: "11/Nov/2021"
 	};
 
-	// Repito la secuencia para varios registros
-	for (let i = 0; i < 10; i++) {
-		// Creo una copia de un registro a insertar
-		const documentElement = documentTemplate.content.cloneNode(true);
-
-		// Cargo los datos del registro genérico
-		for (const dd in documentData) {
-			documentElement.querySelector(`#${dd}`).innerText = documentData[dd];
-		}
-
-		// Inserto el registro
-		documentList.appendChild(documentElement);
-	}
+	return rowFromSource;
 }
 
-// Función para agregar en una tabla, la cabecera y el cuerpo con los datos
-function addTable() {
-	// Verifica si el browser soporta la funcionalidad <template> de HTML, buscando la existencia del atributo 'content'
-	if ('content' in document.createElement('template')) {
-		addHeader();
-		addRows();
-	} else {
-		console.error("El browser no soporta la funcionalidad <template> de HTML.");
-	}
-}
 
-// Agrego un listener el cual se activará al cargar completamente el docummento HTML 
-document.addEventListener("DOMContentLoaded", event => addTable());  // TODO: ¿Se puede poner directamente la función?
+// Agrego un listener el cual se activará al cargar completamente el documento HTML 
+document.addEventListener("DOMContentLoaded", event => addTable());
