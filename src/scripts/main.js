@@ -1,7 +1,6 @@
 
-////@ts-check // TODO: Ver uso de @ts-check para archivos JS, ya que da advertencias propias de TypeScript
+////@ts-check // Ver uso de @ts-check para archivos JS, ya que da advertencias propias de TypeScript
 "use strict";
-// TODO: Cada vez que hago document.querySelector() puede que el valor vuelva null, tener en cuenta esos casos
 
 // Agrego la cabecera a la tabla existente en el html
 function addHeader() {
@@ -16,8 +15,8 @@ function addHeader() {
 
 	// Cargo los datos de la cabecera obtenida
 	// "for..in" está diseñado para iterar sobre las propiedades de un objeto, obteniendo la clave de cada propiedad. Usando esta clave en combinación con la sintaxis de corchetes del objeto se obtienen los valores del mismo.
-	for(const hd in headerData) {	
-		documentHeader.querySelector(`#${hd}`).innerText = headerData[hd];
+	for(const hd in headerData) {
+		updateInnerTextElementFromQuery(`#${hd}`,documentHeader.querySelector(`#${hd}`),headerData[hd]);
 	}
 
 	// Inserto la cabecera
@@ -40,22 +39,11 @@ function addRows() {
 
 		// Cargo los datos del registro obtenido
 		for (const dd in documentData) {
-			documentElement.querySelector(`#${dd}`).innerText = documentData[dd];
+			updateInnerTextElementFromQuery(`#${dd}`,documentElement.querySelector(`#${dd}`),documentData[dd]);
 		}
 
 		// Inserto el registro
 		documentList.appendChild(documentElement);
-	}
-}
-
-// Agrego en una tabla, la cabecera y el cuerpo con los datos
-function addTable() {
-	// Verifica si el browser soporta la funcionalidad <template> de HTML, buscando la existencia del atributo 'content'
-	if ('content' in document.createElement('template')) {
-		addHeader();
-		addRows();
-	} else {
-		console.error("El browser no soporta la funcionalidad <template> de HTML.");
 	}
 }
 
@@ -79,7 +67,6 @@ function readHeaderFromSource() {
 	return headerFromSource;
 }
 
-
 // Abstracción que representa la lectura de la fila de una tabla desde una fuente externa 
 function readRowFromSource() {
 
@@ -100,6 +87,25 @@ function readRowFromSource() {
 	return rowFromSource;
 }
 
+// Actualizo el InnerText con el valor <text> para un elemento obtenido por <query> a partir de un <selector>
+function updateInnerTextElementFromQuery(selector,query,text) {
+	if(query!== null) { 
+		query.innerText = text; 
+	} else {
+		console.error(`Elemento ${selector} no encontrado.`);
+	}
+}
+
+// Agrego en una tabla, la cabecera y el cuerpo con los datos
+function addTable() {
+	// Verifica si el browser soporta la funcionalidad <template> de HTML, buscando la existencia del atributo 'content'
+	if ('content' in document.createElement('template')) {
+		addHeader();
+		addRows();
+	} else {
+		console.error("El browser no soporta la funcionalidad <template> de HTML.");
+	}
+}
 
 // Agrego un listener el cual se activará al cargar completamente el documento HTML 
 document.addEventListener("DOMContentLoaded", event => addTable());
